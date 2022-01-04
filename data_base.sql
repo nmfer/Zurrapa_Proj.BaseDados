@@ -48,7 +48,7 @@ CREATE TABLE Products_in_bar
   FOREIGN KEY (id_product, name) REFERENCES Products(id_product, name)
 );
 
-CREATE TABLE Pedidos
+CREATE TABLE Orders
 (
   total_price FLOAT NOT NULL,
   id_order INT NOT NULL,
@@ -83,7 +83,7 @@ CREATE TABLE Products_order
   id_order INT NOT NULL,
   id_product INT NOT NULL,
   name VARCHAR(40) NOT NULL,
-  FOREIGN KEY (id_order) REFERENCES Pedidos(id_order),
+  FOREIGN KEY (id_order) REFERENCES Orders(id_order),
   FOREIGN KEY (id_product, name) REFERENCES Products(id_product, name)
 );
 

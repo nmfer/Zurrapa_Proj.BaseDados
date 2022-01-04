@@ -1,3 +1,5 @@
+USE ZurrapaSede;
+
 CREATE TABLE Branch
 (
   id_responsible INT NOT NULL,
@@ -35,9 +37,9 @@ CREATE TABLE Bar
 
 CREATE TABLE Products_in_bar
 (
-  quatity/unit INT NOT NULL,
+  quantity INT NOT NULL,
   sale_price FLOAT NOT NULL,
-  minimum_quatity/unit INT NOT NULL,
+  minimum_quantity INT NOT NULL,
   id_bar INT NOT NULL,
   id_product INT NOT NULL,
   name VARCHAR(40) NOT NULL,
@@ -46,7 +48,7 @@ CREATE TABLE Products_in_bar
   FOREIGN KEY (id_product, name) REFERENCES Products(id_product, name)
 );
 
-CREATE TABLE Order
+CREATE TABLE Pedidos
 (
   total_price FLOAT NOT NULL,
   id_order INT NOT NULL,
@@ -81,7 +83,7 @@ CREATE TABLE Products_order
   id_order INT NOT NULL,
   id_product INT NOT NULL,
   name VARCHAR(40) NOT NULL,
-  FOREIGN KEY (id_order) REFERENCES Order(id_order),
+  FOREIGN KEY (id_order) REFERENCES Pedidos(id_order),
   FOREIGN KEY (id_product, name) REFERENCES Products(id_product, name)
 );
 
@@ -95,10 +97,10 @@ CREATE TABLE Schedule
 
 CREATE TABLE Warehouse
 (
-  quantity/set INT NOT NULL,
+  quantity INT NOT NULL,
   purchase_price FLOAT NOT NULL,
   set_to_unit INT NOT NULL,
-  minimum_quantity/set INT NOT NULL,
+  minimum_quantity INT NOT NULL,
   total_quantity INT NOT NULL,
   id_warehouse INT NOT NULL,
   id_product INT NOT NULL,

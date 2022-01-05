@@ -2,7 +2,7 @@
 
 ## Explicação das tabelas e atributos de cada
 
-**NEGRITO** -> PRIMARY KEY
+**NEGRITO** -> PRIMARY KEY \\
 *ITÁLICO* -> FOREIGN KEY
 
 ### Branch

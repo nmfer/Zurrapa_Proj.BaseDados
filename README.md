@@ -7,6 +7,7 @@
 
 ### Branch
 - id_responsible -> empregado responsavél pela filial
+- **id_branch** -> número de identificação da filial
 - designation -> nome da filial
 - email
 - phone_num

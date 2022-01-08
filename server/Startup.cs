@@ -18,6 +18,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 
+using AdminBranch.Data;
 using Radzen;
 namespace AdminBranch
 {
@@ -51,6 +52,12 @@ namespace AdminBranch
             });
 
             services.AddHttpClient();
+            services.AddScoped<SqlProjectFinalService>();
+
+            services.AddDbContext<AdminBranch.Data.SqlProjectFinalContext>(options =>
+            {
+              options.UseSqlServer(Configuration.GetConnectionString("SqlProjectFinalConnection"));
+            });
 
             services.AddRazorPages();
             services.AddServerSideBlazor().AddHubOptions(o =>

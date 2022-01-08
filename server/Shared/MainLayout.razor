@@ -2,6 +2,7 @@
 
 @using Radzen
 @using Radzen.Blazor
+@using AdminBranch.Models.SqlProjectFinal
 <RadzenDialog />
 <RadzenNotification />
 <RadzenTooltip />
@@ -33,6 +34,10 @@
     <RadzenSidebar @ref="sidebar0">
       <ChildContent>
         <RadzenPanelMenu style="height: 100%">
+          <ChildContent>
+            <RadzenPanelMenuItem Text="Login" Path="login">
+            </RadzenPanelMenuItem>
+          </ChildContent>
         </RadzenPanelMenu>
       </ChildContent>
     </RadzenSidebar>

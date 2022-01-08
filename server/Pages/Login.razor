@@ -1,0 +1,16 @@
+﻿@page "/"
+@page "/login"
+@layout MainZurrapaLayout
+@inherits AdminBranch.Pages.LoginComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using AdminBranch.Models.SqlProjectFinal
+<RadzenContent Container="main">
+  <ChildContent>
+    <RadzenHeading Size="H1" Text="Login">
+    </RadzenHeading>
+    <RadzenLogin AllowRegister="false" AllowResetPassword="false" UserRequired="UserID is required" UserText="UserID">
+    </RadzenLogin>
+  </ChildContent>
+</RadzenContent>

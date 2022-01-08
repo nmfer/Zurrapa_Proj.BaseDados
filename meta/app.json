@@ -1,18 +1,23 @@
 {
-  "name": "AdminBranch",
-  "generator": "@radzen/blazor-server",
-  "theme": "standard",
-  "logo": "",
-  "pages": [],
-  "layouts": [
-    "Login",
-    "Main"
+  "dataSources": [
+    "sql_project_final"
   ],
-  "startPage": null,
+  "generator": "@radzen/blazor-server",
   "https": false,
-  "navigation": [],
-  "dataSources": [],
+  "layouts": [
+    "Main_Zurrapa"
+  ],
+  "logo": "",
+  "name": "AdminBranch",
+  "navigation": [
+    "Login"
+  ],
+  "pages": [
+    "Login"
+  ],
+  "serverLang": "cs",
   "serverProject": true,
   "serverVersion": "6",
-  "serverLang": "cs"
+  "startPage": "Login_Employees",
+  "theme": "standard"
 }

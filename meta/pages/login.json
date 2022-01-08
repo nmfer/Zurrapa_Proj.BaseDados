@@ -1,0 +1,27 @@
+{
+  "access": "Everybody",
+  "components": [
+    {
+      "components": [
+        {
+          "name": "pageTitle",
+          "size": "H1",
+          "text": "Login",
+          "type": "heading"
+        },
+        {
+          "allowRegister": false,
+          "allowResetPassword": false,
+          "name": "login0",
+          "type": "login",
+          "userRequired": "UserID is required",
+          "userText": "UserID"
+        }
+      ],
+      "container": "main",
+      "type": "content"
+    }
+  ],
+  "layout": "Main_Zurrapa",
+  "name": "Login"
+}

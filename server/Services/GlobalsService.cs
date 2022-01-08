@@ -3,6 +3,8 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
+using AdminBranch.Models;
+using AdminBranch.Models.SqlProjectFinal;
 using Radzen;
 
 namespace AdminBranch

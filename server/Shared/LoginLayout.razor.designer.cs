@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Radzen;
 using Radzen.Blazor;
+using AdminBranch.Models.SqlProjectFinal;
 using AdminBranch.Pages;
 
 namespace AdminBranch.Layouts
@@ -26,6 +27,9 @@ namespace AdminBranch.Layouts
 
         [Inject]
         protected NotificationService NotificationService { get; set; }
+        [Inject]
+        protected SqlProjectFinalService SqlProjectFinal { get; set; }
+
         protected RadzenBody body0;
 
     }

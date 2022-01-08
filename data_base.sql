@@ -15,6 +15,7 @@ CREATE TABLE Employee
 (
   id_num INT NOT NULL,
   type VARCHAR(30) NOT NULL,
+  pwd VARCHAR(30) NOT NULL,
   PRIMARY KEY (id_num)
 );
 

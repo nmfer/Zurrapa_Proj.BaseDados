@@ -1,14 +1,12 @@
 {
-  "dataSources": [
-    "sql_project_final"
-  ],
-  "generator": "@radzen/blazor-server",
+  "dataSources": [],
+  "generator": "@radzen/angular-generator",
   "https": false,
   "layouts": [
-    "Main_Zurrapa"
+    "Employee_Login"
   ],
   "logo": "",
-  "name": "AdminBranch",
+  "name": "TableEmployee",
   "navigation": [
     "Login"
   ],
@@ -18,6 +16,6 @@
   "serverLang": "cs",
   "serverProject": true,
   "serverVersion": "6",
-  "startPage": "Login_Employees",
-  "theme": "standard"
+  "startPage": "Login",
+  "theme": "default"
 }

@@ -3,6 +3,27 @@
     {
       "components": [
         {
+          "name": "heading0",
+          "size": "H1",
+          "style": {
+            "textAlign": "center"
+          },
+          "text": "Zurrapa – Drinks & Coffee",
+          "type": "heading"
+        }
+      ],
+      "name": "header0",
+      "type": "header"
+    },
+    {
+      "attributes": [
+        {
+          "name": "Expanded",
+          "value": "true"
+        }
+      ],
+      "components": [
+        {
           "class": "justify-content-center",
           "components": [
             {
@@ -30,17 +51,21 @@
           "type": "row"
         }
       ],
+      "name": "body0",
       "style": {
         "marginLeft": "0px"
       },
-      "attributes": [
+      "type": "body"
+    },
+    {
+      "components": [
         {
-          "name": "Expanded",
-          "value": "true"
+          "name": "label0",
+          "type": "label"
         }
       ],
-      "name": "body0",
-      "type": "body"
+      "name": "footer0",
+      "type": "footer"
     }
   ],
   "name": "Main_Zurrapa"

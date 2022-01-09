@@ -32,6 +32,7 @@ CREATE TABLE Bar
   id_responsible INT NOT NULL,
   address VARCHAR(40) NOT NULL,
   phone_num INT NOT NULL,
+  id_branch INT NOT NULL,
   id_bar INT NOT NULL,
   PRIMARY KEY (id_bar)
 );

@@ -13,8 +13,12 @@ SELECT * FROM Products_order;
 SELECT * FROM Products_to_restock;
 SELECT * FROM Schedule;
 SELECT * FROM Warehouse;
+*/
 
 ALTER TABLE Employee 
-ADD pwd VARCHAR */
+ALTER pwd VARCHAR(30) NOT NULL 
+
+ALTER TABLE Bar 
+ADD COLUMN id_branch INT NOT NULL
 
 SELECT * FROM Employee;

@@ -1,5 +1,27 @@
 USE ZurrapaSede;
 
+-- EMPREGADOS                       -- o único que tem ID definido manual é o 1º de todos -> 000001
+INSERT INTO Employees(id_num, type, pwd) VALUES (000001, 'Empregado_Filial', 'final_boss_battle');
+INSERT INTO Employees(id_num, type, pwd) VALUES ((SELECT TOP 1(id_num) FROM Employees ORDER BY id_num DESC) + 1, 'Empregado_Balcao', 'mini_boss_fight_1')
+INSERT INTO Employees(id_num, type, pwd) VALUES ((SELECT TOP 1(id_num) FROM Employees ORDER BY id_num DESC) + 1, 'Empregado_Mesa', 'i_likepotatoes');
+INSERT INTO Employees(id_num, type, pwd) VALUES ((SELECT TOP 1(id_num) FROM Employees ORDER BY id_num DESC) + 1, 'Empregado_Armazem', 'pwd123');
+INSERT INTO Employees(id_num, type, pwd) VALUES ((SELECT TOP 1(id_num) FROM Employees ORDER BY id_num DESC) + 1, 'Empregado_Filial', 'pwd123');
+INSERT INTO Employees(id_num, type, pwd) VALUES ((SELECT TOP 1(id_num) FROM Employees ORDER BY id_num DESC) + 1, 'Empregado_Filial', 'workin_class4')
+INSERT INTO Employees(id_num, type, pwd) VALUES ((SELECT TOP 1(id_num) FROM Employees ORDER BY id_num DESC) + 1, 'Empregado_Filial', 'meh')
+INSERT INTO Employees(id_num, type, pwd) VALUES ((SELECT TOP 1(id_num) FROM Employees ORDER BY id_num DESC) + 1, 'Empregado_Filial', 'weow_owen_wilson')
+INSERT INTO Employees(id_num, type, pwd) VALUES ((SELECT TOP 1(id_num) FROM Employees ORDER BY id_num DESC) + 1, 'Empregado_Armazem', 'minimal_waige')
+
+-- tipos de empregados - mesa e balcão
+-- automatizar a introdução do ID
+-- (SELECT TOP 1(id_num) FROM Employees ORDER BY id_num DESC) + 1
+
+-- BAR
+INSERT INTO Bar(id_responsible, address, phone_num, id_branch, id_bar) VALUES (000002, 'Avenida da Universidade nº1', 922333123, 01, 001);
+INSERT INTO Bar(id_responsible, address, phone_num, id_branch, id_bar) VALUES (000002, 'Avenida da Universidade nº1', 922333123, 01, 001);
+
+-- FILIAIS
+INSERT INTO Branch(id_responsible, id_branch, designation, email, phone_num, address) VALUES (000001, 01, 'Filial 1', 'filial_1@gmail.com', 911567566, 'Rua Lisboa nº4')
+
 -- BEBIDAS
 INSERT INTO Products(id_product, name, category) VALUES (1, 'cafe', 'bebida');
 INSERT INTO Products(id_product, name, category) VALUES (2, 'agua 1.5L', 'bebida');

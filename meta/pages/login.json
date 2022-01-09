@@ -1,5 +1,7 @@
 {
-  "access": "Everybody",
+  "access": [
+    "Everybody"
+  ],
   "components": [
     {
       "components": [
@@ -10,18 +12,30 @@
           "type": "heading"
         },
         {
+          "name": "heading0",
+          "size": "H5",
+          "text": "Please, enter your credentials to begin:",
+          "type": "heading"
+        },
+        {
           "allowRegister": false,
           "allowResetPassword": false,
           "name": "login0",
           "type": "login",
           "userRequired": "UserID is required",
-          "userText": "UserID"
+          "userText": "UserID",
+          "loginText": "Login",
+          "registerText": "Sign up",
+          "registerMessageText": "Don't have an account yet?",
+          "passwordText": "Password",
+          "passwordRequired": "Password is required",
+          "resetPasswordText": "Forgot password"
         }
       ],
       "container": "main",
       "type": "content"
     }
   ],
-  "layout": "Main_Zurrapa",
+  "layout": "Employee_Login",
   "name": "Login"
 }

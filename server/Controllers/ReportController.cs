@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AdminBranch.Controllers
+namespace TableEmployee.Controllers
 {
     public partial class ReportController : Controller
     {
@@ -37,9 +37,9 @@ namespace AdminBranch.Controllers
             var urlToReplace = String.Format("{0}://{1}{2}/{3}/", Request.Scheme, Request.Host.Value, Request.PathBase, "ssrsproxy");
             var requestedUrl = Request.GetDisplayUrl().Replace(urlToReplace, "", StringComparison.InvariantCultureIgnoreCase);
             var reportServerIndex = requestedUrl.IndexOf("/ReportServer", StringComparison.InvariantCultureIgnoreCase);
-            if (reportServerIndex == -1)
+            if(reportServerIndex == -1) 
             {
-                reportServerIndex = requestedUrl.IndexOf("/Reports", StringComparison.InvariantCultureIgnoreCase);
+                reportServerIndex = requestedUrl.IndexOf("/Reports");
             }
             var reportUrlParts = requestedUrl.Substring(0, reportServerIndex).Split('/');
 
@@ -79,10 +79,7 @@ namespace AdminBranch.Controllers
         {
             var httpClientHandler = new HttpClientHandler();
 
-            httpClientHandler.AllowAutoRedirect = true;
-            httpClientHandler.UseDefaultCredentials = true;
-
-            if (httpClientHandler.SupportsAutomaticDecompression)
+            if(httpClientHandler.SupportsAutomaticDecompression)
             {
                 httpClientHandler.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
             }
@@ -100,7 +97,7 @@ namespace AdminBranch.Controllers
 
             foreach (var header in currentReqest.Headers)
             {
-                if (header.Key != "Host")
+                if(header.Key != "Host")
                 {
                     proxyRequestMessage.Headers.TryAddWithoutValidation(header.Key, new string[] { header.Value });
                 }
@@ -160,58 +157,50 @@ namespace AdminBranch.Controllers
                 var builder = new StringBuilder();
 
                 var delimiterIndex = 0;
-                var length = 0;
+                var length = 0; 
                 var index = 0;
 
                 var type = "";
                 var id = "";
                 var content = "";
 
-                while (index < result.Length)
-                {
+                while (index < result.Length) {
                     delimiterIndex = result.IndexOf("|", index);
-                    if (delimiterIndex == -1)
-                    {
+                    if (delimiterIndex == -1) {
                         break;
                     }
                     length = int.Parse(result.Substring(index, delimiterIndex - index));
-                    if ((length % 1) != 0)
-                    {
+                    if ((length % 1) != 0) {
                         break;
                     }
                     index = delimiterIndex + 1;
                     delimiterIndex = result.IndexOf("|", index);
-                    if (delimiterIndex == -1)
-                    {
+                    if (delimiterIndex == -1) {
                         break;
                     }
                     type = result.Substring(index, delimiterIndex - index);
                     index = delimiterIndex + 1;
                     delimiterIndex = result.IndexOf("|", index);
-                    if (delimiterIndex == -1)
-                    {
+                    if (delimiterIndex == -1) {
                         break;
                     }
                     id = result.Substring(index, delimiterIndex - index);
                     index = delimiterIndex + 1;
-                    if ((index + length) >= result.Length)
-                    {
+                    if ((index + length) >= result.Length) {
                         break;
                     }
                     content = result.Substring(index, length);
                     index += length;
-                    if (result.Substring(index, 1) != "|")
-                    {
+                    if (result.Substring(index, 1) != "|") {
                         break;
                     }
                     index++;
 
                     content = content.Replace($"/{ReportServer}/", $"{proxyUrl}/{ReportServer}/", StringComparison.InvariantCultureIgnoreCase);
-                    if (content.Contains("./ReportViewer.aspx", StringComparison.InvariantCultureIgnoreCase))
+                    if(content.Contains("./ReportViewer.aspx", StringComparison.InvariantCultureIgnoreCase)) 
                     {
                         content = content.Replace("./ReportViewer.aspx", $"{proxyUrl}/{ReportServer}/Pages/ReportViewer.aspx", StringComparison.InvariantCultureIgnoreCase);
-                    }
-                    else
+                    } else 
                     {
                         content = content.Replace("ReportViewer.aspx", $"{proxyUrl}/{ReportServer}/Pages/ReportViewer.aspx", StringComparison.InvariantCultureIgnoreCase);
                     }
@@ -220,16 +209,13 @@ namespace AdminBranch.Controllers
                 }
 
                 result = builder.ToString();
-            }
-            else
-            {
-                result = result.Replace($"/{ReportServer}/", $"{proxyUrl}/{ReportServer}/", StringComparison.InvariantCultureIgnoreCase);
-
-                if (result.Contains("./ReportViewer.aspx", StringComparison.InvariantCultureIgnoreCase))
+            } else {
+                result = result.Replace($"/{ReportServer}/",$"{proxyUrl}/{ReportServer}/", StringComparison.InvariantCultureIgnoreCase);
+                
+                if(result.Contains("./ReportViewer.aspx", StringComparison.InvariantCultureIgnoreCase)) 
                 {
                     result = result.Replace("./ReportViewer.aspx", $"{proxyUrl}/{ReportServer}/Pages/ReportViewer.aspx", StringComparison.InvariantCultureIgnoreCase);
-                }
-                else
+                } else 
                 {
                     result = result.Replace("ReportViewer.aspx", $"{proxyUrl}/{ReportServer}/Pages/ReportViewer.aspx", StringComparison.InvariantCultureIgnoreCase);
                 }

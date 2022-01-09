@@ -20,6 +20,7 @@
     - Empregado de Balcão
     - Empregado de Armazém
     - Empregado Escritório/Filial
+- pwd
 
 ### Products
 - **id_product** -> número identificação produto
@@ -34,6 +35,7 @@
 - **id_bar** -> número de identificação do bar
 - phone_num
 - address
+- id_branch
 
 ### Products_in_bar
 - ***id_product*** -> número de identificação do produto, obtido da tabela Products

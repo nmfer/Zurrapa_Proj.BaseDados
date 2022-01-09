@@ -99,6 +99,12 @@ CREATE TABLE Schedule
 
 CREATE TABLE Warehouse
 (
+  id_warehouse INT NOT NULL,
+  PRIMARY KEY (id_warehouse)
+)
+
+CREATE TABLE Products_in_Warehouse
+(
   quantity INT NOT NULL,
   purchase_price FLOAT NOT NULL,
   set_to_unit INT NOT NULL,
@@ -107,8 +113,9 @@ CREATE TABLE Warehouse
   id_warehouse INT NOT NULL,
   id_product INT NOT NULL,
   name VARCHAR(40) NOT NULL,
-  PRIMARY KEY (id_warehouse),
-  FOREIGN KEY (id_product, name) REFERENCES Products(id_product, name)
+  FOREIGN KEY (id_warehouse) REFERENCES Warehouse(id_warehouse),
+  FOREIGN KEY (id_product, name) REFERENCES Products(id_product, name),
+  PRIMARY KEY (id_warehouse)
 );
 
 CREATE TABLE List_Employees

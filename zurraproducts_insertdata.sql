@@ -10,17 +10,26 @@ INSERT INTO Employees(id_num, type, pwd) VALUES ((SELECT TOP 1(id_num) FROM Empl
 INSERT INTO Employees(id_num, type, pwd) VALUES ((SELECT TOP 1(id_num) FROM Employees ORDER BY id_num DESC) + 1, 'Empregado_Filial', 'meh')
 INSERT INTO Employees(id_num, type, pwd) VALUES ((SELECT TOP 1(id_num) FROM Employees ORDER BY id_num DESC) + 1, 'Empregado_Filial', 'weow_owen_wilson')
 INSERT INTO Employees(id_num, type, pwd) VALUES ((SELECT TOP 1(id_num) FROM Employees ORDER BY id_num DESC) + 1, 'Empregado_Armazem', 'minimal_waige')
-
+INSERT INTO Employees(id_num, type, pwd) VALUES ((SELECT TOP 1(id_num) FROM Employees ORDER BY id_num DESC) + 1, 'Empregado_Mesa', 'pwd123');
+INSERT INTO Employees(id_num, type, pwd) VALUES ((SELECT TOP 1(id_num) FROM Employees ORDER BY id_num DESC) + 1, 'Empregado_Armazem', 'pwd123');
+INSERT INTO Employees(id_num, type, pwd) VALUES ((SELECT TOP 1(id_num) FROM Employees ORDER BY id_num DESC) + 1, 'Empregado_Balcao', 'pwd123');
+INSERT INTO Employees(id_num, type, pwd) VALUES ((SELECT TOP 1(id_num) FROM Employees ORDER BY id_num DESC) + 1, 'Empregado_Balcao', 'pwd123');
+INSERT INTO Employees(id_num, type, pwd) VALUES ((SELECT TOP 1(id_num) FROM Employees ORDER BY id_num DESC) + 1, 'Empregado_Mesa', 'test44');
+INSERT INTO Employees(id_num, type, pwd) VALUES ((SELECT TOP 1(id_num) FROM Employees ORDER BY id_num DESC) + 1, 'Empregado_Balcao', '123pass');
+INSERT INTO Employees(id_num, type, pwd) VALUES ((SELECT TOP 1(id_num) FROM Employees ORDER BY id_num DESC) + 1, 'Empregado_Mesa', '22qwerty');
 -- tipos de empregados - mesa e balcão
 -- automatizar a introdução do ID
 -- (SELECT TOP 1(id_num) FROM Employees ORDER BY id_num DESC) + 1
 
 -- BAR
-INSERT INTO Bar(id_responsible, address, phone_num, id_branch, id_bar) VALUES (000002, 'Avenida da Universidade nº1', 922333123, 01, 001);
-INSERT INTO Bar(id_responsible, address, phone_num, id_branch, id_bar) VALUES (000002, 'Avenida da Universidade nº1', 922333123, 01, 001);
+INSERT INTO Bar(id_responsible, address, phone_num, id_branch, id_bar) VALUES (000002, 'Avenida da Universidade n1', 922333123, 01, 001);
+INSERT INTO Bar(id_responsible, address, phone_num, id_branch, id_bar) VALUES (000010, 'Rua Jose Ramalho n78', 933344554, 01, ((SELECT TOP 1(id_bar) FROM Bar ORDER BY id_bar DESC) + 1));
+INSERT INTO Bar(id_responsible, address, phone_num, id_branch, id_bar) VALUES (000012, 'Rua Ramiro n5', 922233412, 01, ((SELECT TOP 1(id_bar) FROM Bar ORDER BY id_bar DESC) + 1));
+INSERT INTO Bar(id_responsible, address, phone_num, id_branch, id_bar) VALUES (000013, 'Rua da Fonte n7', 934444855, 02, ((SELECT TOP 1(id_bar) FROM Bar ORDER BY id_bar DESC) + 1));
 
 -- FILIAIS
-INSERT INTO Branch(id_responsible, id_branch, designation, email, phone_num, address) VALUES (000001, 01, 'Filial 1', 'filial_1@gmail.com', 911567566, 'Rua Lisboa nº4')
+INSERT INTO Branch(id_responsible, id_branch, designation, email, phone_num, address) VALUES (000001, 01, 'Filial 1', 'filial_1@gmail.com', 911567566, 'Rua Principal Lisboa n4');
+INSERT INTO Branch(id_responsible, ((SELECT TOP 1(id_branch) FROM Branch ORDER BY id_branch DESC) + 1), 'Filial 2', 'filial_2@gmail.com', 912345678, 'Rua Secundaria n21');
 
 -- BEBIDAS
 INSERT INTO Products(id_product, name, category) VALUES (1, 'cafe', 'bebida');

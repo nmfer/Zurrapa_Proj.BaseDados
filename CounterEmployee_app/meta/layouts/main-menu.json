@@ -51,24 +51,30 @@
             {
               "path": "produtos",
               "target": "_self",
-              "text": "Produtos"
+              "text": "Consultar Produtos"
+            },
+            {
+              "text": "Pedido de Reposição Produto"
             },
             {
               "path": "pedidos",
               "selected": true,
               "target": "_self",
-              "text": "Pedidos"
+              "text": "Consultar Pedidos"
             },
             {
               "items": [],
               "path": "add-pedido",
-              "text": "Novo Pedido"
+              "text": "Iniciar novo Pedido"
             },
             {
-              "text": "Repôr Produto"
+              "text": "Alterar Pedido"
             },
             {
-              "text": "Total Gasto/Total Ganho"
+              "text": "Administração"
+            },
+            {
+              "text": "Logout"
             }
           ],
           "name": "panelmenu0",
@@ -86,7 +92,7 @@
       "components": [
         {
           "name": "footerText",
-          "text": "CounterEmployee, Copyright &copy; 2022",
+          "text": "Zurrapa – Drinks & Coffee, Copyright &copy; 2022",
           "type": "label"
         }
       ],

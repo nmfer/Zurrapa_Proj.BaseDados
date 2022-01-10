@@ -10,11 +10,19 @@
   ],
   "logo": "",
   "name": "TableEmployee",
-  "navigation": [],
-  "pages": [],
+  "navigation": [
+    "Login",
+    "ProductsInBar"
+  ],
+  "pages": [
+    "Login",
+    "ProductsInBar",
+    "Add ProductsInBar",
+    "Edit ProductsInBar"
+  ],
   "serverLang": "cs",
   "serverProject": true,
   "serverVersion": "6",
-  "startPage": null,
+  "startPage": "Login",
   "theme": "default"
 }

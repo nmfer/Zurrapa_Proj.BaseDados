@@ -1,0 +1,47 @@
+{
+  "access": [
+    "Everybody"
+  ],
+  "components": [
+    {
+      "components": [
+        {
+          "name": "pageTitle",
+          "size": "H1",
+          "text": "Login",
+          "type": "heading"
+        },
+        {
+          "name": "heading0",
+          "size": "H5",
+          "text": "Bem Vindo!",
+          "type": "heading"
+        },
+        {
+          "name": "heading1",
+          "size": "H6",
+          "text": "Introduza as suas credenciais.",
+          "type": "heading"
+        },
+        {
+          "allowRegister": false,
+          "allowResetPassword": false,
+          "name": "login0",
+          "passwordRequired": "Introduza a password",
+          "type": "login",
+          "userRequired": "Introduza o seu UserID ",
+          "userText": "UserID",
+          "loginText": "Login",
+          "registerText": "Sign up",
+          "registerMessageText": "Don't have an account yet?",
+          "passwordText": "Password",
+          "resetPasswordText": "Forgot password"
+        }
+      ],
+      "container": "main",
+      "type": "content"
+    }
+  ],
+  "layout": "Login",
+  "name": "Login"
+}

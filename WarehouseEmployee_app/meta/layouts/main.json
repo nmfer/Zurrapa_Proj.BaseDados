@@ -14,7 +14,7 @@
                 },
                 {
                   "name": "label0",
-                  "text": "WarehouseEmployee",
+                  "text": "Zurrapa – Drinks & Coffee",
                   "type": "label"
                 }
               ],
@@ -83,7 +83,7 @@
       "components": [
         {
           "name": "footerText",
-          "text": "WarehouseEmployee, Copyright &copy; 2022",
+          "text": "Zurrapa – Drinks & Coffee, Copyright &copy; 2022",
           "type": "label"
         }
       ],

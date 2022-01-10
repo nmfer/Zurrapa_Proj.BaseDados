@@ -18,6 +18,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Hosting;
 
+using TableEmployee.Data;
 
 namespace TableEmployee
 {
@@ -72,15 +73,44 @@ namespace TableEmployee
       
               var oDataBuilder = new ODataConventionModelBuilder();
 
+              oDataBuilder.EntitySet<TableEmployee.Models.SqlProjectFinal.Bar>("Bars");
+              oDataBuilder.EntitySet<TableEmployee.Models.SqlProjectFinal.Branch>("Branches");
+              oDataBuilder.EntitySet<TableEmployee.Models.SqlProjectFinal.DayBarBranch>("DayBarBranches");
+              oDataBuilder.EntitySet<TableEmployee.Models.SqlProjectFinal.DayBranch>("DayBranches");
+              oDataBuilder.EntitySet<TableEmployee.Models.SqlProjectFinal.Employee>("Employees");
+              oDataBuilder.EntitySet<TableEmployee.Models.SqlProjectFinal.ListEmployee>("ListEmployees");
+              oDataBuilder.EntitySet<TableEmployee.Models.SqlProjectFinal.Order>("Orders");
+
+              var product = oDataBuilder.EntitySet<TableEmployee.Models.SqlProjectFinal.Product>("Products");
+              product.EntityType.HasKey(entity => new {
+                entity.id_product, entity.name
+              });
+
+              var productsInBar = oDataBuilder.EntitySet<TableEmployee.Models.SqlProjectFinal.ProductsInBar>("ProductsInBars");
+              productsInBar.EntityType.HasKey(entity => new {
+                entity.id_product, entity.name
+              });
+              oDataBuilder.EntitySet<TableEmployee.Models.SqlProjectFinal.ProductsInWarehouse>("ProductsInWarehouses");
+              oDataBuilder.EntitySet<TableEmployee.Models.SqlProjectFinal.ProductsOrder>("ProductsOrders");
+              oDataBuilder.EntitySet<TableEmployee.Models.SqlProjectFinal.ProductsToRestock>("ProductsToRestocks");
+              oDataBuilder.EntitySet<TableEmployee.Models.SqlProjectFinal.Schedule>("Schedules");
+              oDataBuilder.EntitySet<TableEmployee.Models.SqlProjectFinal.Warehouse>("Warehouses");
 
           this.OnConfigureOData(oDataBuilder);
 
 
           var model = oDataBuilder.GetEdmModel();
+          services.AddControllers().AddOData(opt => {
+            opt.AddRouteComponents("odata/SqlProjectFinal", model).Count().Filter().OrderBy().Expand().Select().SetMaxTop(null).TimeZone = TimeZoneInfo.Utc;
+          });
 
 
       services.AddHttpContextAccessor();
 
+      services.AddDbContext<TableEmployee.Data.SqlProjectFinalContext>(options =>
+      {
+        options.UseSqlServer(Configuration.GetConnectionString("SqlProjectFinalConnection"));
+      });
 
       OnConfigureServices(services);
     }

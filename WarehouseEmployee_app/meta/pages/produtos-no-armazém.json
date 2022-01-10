@@ -3,19 +3,6 @@
     {
       "components": [
         {
-          "events": {
-            "click": [
-              {
-                "path": "login",
-                "type": "navigate"
-              }
-            ]
-          },
-          "name": "button0",
-          "text": "Logout",
-          "type": "button"
-        },
-        {
           "name": "pageTitle",
           "size": "H1",
           "text": "Produtos no Armazém",

@@ -7,15 +7,25 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HeadingModule } from '@radzen/angular/dist/heading';
+import { HeaderModule } from '@radzen/angular/dist/header';
 import { BodyModule } from '@radzen/angular/dist/body';
 import { CardModule } from '@radzen/angular/dist/card';
 import { ContentContainerModule } from '@radzen/angular/dist/content-container';
-import { HeaderModule } from '@radzen/angular/dist/header';
 import { SidebarToggleModule } from '@radzen/angular/dist/sidebar-toggle';
 import { LabelModule } from '@radzen/angular/dist/label';
 import { SidebarModule } from '@radzen/angular/dist/sidebar';
 import { PanelMenuModule } from '@radzen/angular/dist/panelmenu';
 import { FooterModule } from '@radzen/angular/dist/footer';
+import { ContentModule } from '@radzen/angular/dist/content';
+import { LoginModule } from '@radzen/angular/dist/login';
+import { GridModule } from '@radzen/angular/dist/grid';
+import { TemplateFormModule } from '@radzen/angular/dist/template-form';
+import { DropDownModule } from '@radzen/angular/dist/dropdown';
+import { RequiredValidatorModule } from '@radzen/angular/dist/required-validator';
+import { TextBoxModule } from '@radzen/angular/dist/textbox';
+import { NumericModule } from '@radzen/angular/dist/numeric';
+import { ButtonModule } from '@radzen/angular/dist/button';
 import { SharedModule } from '@radzen/angular/dist/shared';
 import { NotificationModule } from '@radzen/angular/dist/notification';
 import { DialogModule } from '@radzen/angular/dist/dialog';
@@ -25,11 +35,20 @@ import { AppRoutes } from './app.routes';
 import { AppComponent } from './app.component';
 import { CacheInterceptor } from './cache.interceptor';
 export { AppComponent } from './app.component';
+import { LoginComponent } from './login/login.component';
+import { ProductsInBarComponent } from './products-in-bar/products-in-bar.component';
+import { AddProductsInBarComponent } from './add-products-in-bar/add-products-in-bar.component';
+import { EditProductsInBarComponent } from './edit-products-in-bar/edit-products-in-bar.component';
 import { LoginLayoutComponent } from './login-layout/login-layout.component';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
 
+import { SqlProjectFinalService } from './sql-project-final.service';
 
 export const PageDeclarations = [
+  LoginComponent,
+  ProductsInBarComponent,
+  AddProductsInBarComponent,
+  EditProductsInBarComponent,
 ];
 
 export const LayoutDeclarations = [
@@ -49,6 +68,7 @@ export const AppProviders = [
     useClass: CacheInterceptor,
     multi: true
   },
+  SqlProjectFinalService,
   ConfigService,
   {
     provide: APP_INITIALIZER,
@@ -63,15 +83,25 @@ export const AppImports = [
   BrowserAnimationsModule,
   FormsModule,
   HttpClientModule,
+  HeadingModule,
+  HeaderModule,
   BodyModule,
   CardModule,
   ContentContainerModule,
-  HeaderModule,
   SidebarToggleModule,
   LabelModule,
   SidebarModule,
   PanelMenuModule,
   FooterModule,
+  ContentModule,
+  LoginModule,
+  GridModule,
+  TemplateFormModule,
+  DropDownModule,
+  RequiredValidatorModule,
+  TextBoxModule,
+  NumericModule,
+  ButtonModule,
   SharedModule,
   NotificationModule,
   DialogModule,

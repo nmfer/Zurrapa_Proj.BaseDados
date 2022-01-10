@@ -14,7 +14,7 @@
                 },
                 {
                   "name": "label0",
-                  "text": "TableEmployee",
+                  "text": "Zurrapa – Drinks & Coffee",
                   "type": "label"
                 }
               ],
@@ -47,6 +47,24 @@
     {
       "components": [
         {
+          "items": [
+            {
+              "target": "_self",
+              "text": "Consultar Produtos"
+            },
+            {
+              "text": "Consultar Pedido"
+            },
+            {
+              "text": "Iniciar novo Pedido"
+            },
+            {
+              "text": "Alterar Pedido"
+            },
+            {
+              "text": "Logout"
+            }
+          ],
           "name": "panelmenu0",
           "style": {
             "height": "100%"
@@ -61,7 +79,7 @@
       "components": [
         {
           "name": "footerText",
-          "text": "TableEmployee, Copyright &copy; 2022",
+          "text": "Zurrapa – Drinks & Coffee, Copyright &copy; 2022",
           "type": "label"
         }
       ],

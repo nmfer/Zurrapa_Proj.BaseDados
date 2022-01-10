@@ -6,7 +6,8 @@
   "https": false,
   "layouts": [
     "Login",
-    "Main"
+    "Main",
+    "Dados_Monetarios"
   ],
   "logo": "",
   "name": "BranchEmployee",

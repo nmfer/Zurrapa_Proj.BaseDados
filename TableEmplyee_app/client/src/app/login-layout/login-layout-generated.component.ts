@@ -10,6 +10,8 @@ import { Subscription } from 'rxjs';
 
 import { DialogService, DIALOG_PARAMETERS, DialogRef } from '@radzen/angular/dist/dialog';
 import { NotificationService } from '@radzen/angular/dist/notification';
+import { HeadingComponent } from '@radzen/angular/dist/heading';
+import { HeaderComponent } from '@radzen/angular/dist/header';
 import { BodyComponent } from '@radzen/angular/dist/body';
 import { CardComponent } from '@radzen/angular/dist/card';
 import { ContentContainerComponent } from '@radzen/angular/dist/content-container';
@@ -19,6 +21,10 @@ import { ConfigService } from '../config.service';
 
 export class LoginLayoutGenerated implements AfterViewInit, OnInit, OnDestroy {
   // Components
+  @ViewChild('heading0') heading0: HeadingComponent;
+  @ViewChild('header0') header0: HeaderComponent;
+  @ViewChild('heading1') heading1: HeadingComponent;
+  @ViewChild('heading2') heading2: HeadingComponent;
   @ViewChild('body0') body0: BodyComponent;
   @ViewChild('card0') card0: CardComponent;
   @ViewChild('main') main: ContentContainerComponent;

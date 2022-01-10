@@ -1,0 +1,408 @@
+{
+  "components": [
+    {
+      "type": "content",
+      "container": "main",
+      "components": [
+        {
+          "type": "heading",
+          "name": "pageTitle",
+          "size": "H1",
+          "text": "Add Products In Bar"
+        },
+        {
+          "type": "row",
+          "components": [
+            {
+              "type": "col",
+              "class": "col-md-12",
+              "components": [
+                {
+                  "type": "template-form",
+                  "name": "form0",
+                  "components": [
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Product",
+                              "component": "id_product",
+                              "name": "id_productLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "data": "${getProductsResult}",
+                              "textProperty": "category",
+                              "valueProperty": "id_product",
+                              "placeholder": "Choose Product",
+                              "type": "dropdown",
+                              "name": "id_product",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              }
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "id_productRequiredValidator",
+                              "component": "id_product",
+                              "text": "id_product is required",
+                              "style": {
+                                "position": "absolute"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Name",
+                              "component": "name",
+                              "name": "nameLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "maxLength": 40,
+                              "type": "textbox",
+                              "name": "name",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              }
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "nameRequiredValidator",
+                              "component": "name",
+                              "text": "name is required",
+                              "style": {
+                                "position": "absolute"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Quantity",
+                              "component": "quantity",
+                              "name": "quantityLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "type": "numeric",
+                              "name": "quantity",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              }
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "quantityRequiredValidator",
+                              "component": "quantity",
+                              "text": "quantity is required",
+                              "style": {
+                                "position": "absolute"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Sale Price",
+                              "component": "sale_price",
+                              "name": "sale_priceLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "type": "numeric",
+                              "name": "sale_price",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              }
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "sale_priceRequiredValidator",
+                              "component": "sale_price",
+                              "text": "sale_price is required",
+                              "style": {
+                                "position": "absolute"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Minimum Quantity",
+                              "component": "minimum_quantity",
+                              "name": "minimum_quantityLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "type": "numeric",
+                              "name": "minimum_quantity",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              }
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "minimum_quantityRequiredValidator",
+                              "component": "minimum_quantity",
+                              "text": "minimum_quantity is required",
+                              "style": {
+                                "position": "absolute"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Bar",
+                              "component": "id_bar",
+                              "name": "id_barLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "data": "${getBarsResult}",
+                              "textProperty": "address",
+                              "valueProperty": "id_bar",
+                              "placeholder": "Choose Bar",
+                              "type": "dropdown",
+                              "name": "id_bar",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              }
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "id_barRequiredValidator",
+                              "component": "id_bar",
+                              "text": "id_bar is required",
+                              "style": {
+                                "position": "absolute"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col offset-sm-3",
+                          "components": [
+                            {
+                              "type": "button",
+                              "buttonType": "submit",
+                              "icon": "save",
+                              "text": "Save",
+                              "buttonStyle": "primary"
+                            },
+                            {
+                              "type": "button",
+                              "buttonStyle": "light",
+                              "style": {
+                                "marginLeft": "1rem"
+                              },
+                              "text": "Cancel",
+                              "events": {
+                                "click": [
+                                  {
+                                    "type": "back"
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "events": {
+                    "submit": [
+                      {
+                        "error": [
+                          {
+                            "detail": "Unable to create new ProductsInBar!",
+                            "severity": "error",
+                            "summary": "Error",
+                            "type": "notify"
+                          }
+                        ],
+                        "name": "sql_project_final.createProductsInBar",
+                        "parameters": [
+                          {
+                            "name": "ProductsInBar",
+                            "value": "${event}"
+                          }
+                        ],
+                        "then": [
+                          {
+                            "type": "back"
+                          }
+                        ],
+                        "type": "invoke"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "sql_project_final.getProducts",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getProductsResult",
+            "type": "set",
+            "value": "${result.value}"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "name": "sql_project_final.getBars",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getBarsResult",
+            "type": "set",
+            "value": "${result.value}"
+          }
+        ],
+        "type": "invoke"
+      }
+    ]
+  },
+  "name": "Add Products In Bar",
+  "layout": "Main"
+}

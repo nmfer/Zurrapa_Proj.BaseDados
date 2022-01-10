@@ -10,11 +10,15 @@
   ],
   "logo": "",
   "name": "BranchEmployee",
-  "navigation": [],
-  "pages": [],
+  "navigation": [
+    "Login"
+  ],
+  "pages": [
+    "Login"
+  ],
   "serverLang": "cs",
   "serverProject": true,
   "serverVersion": "6",
-  "startPage": null,
+  "startPage": "Login",
   "theme": "default"
 }

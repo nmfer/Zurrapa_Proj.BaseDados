@@ -16,6 +16,12 @@ import { LabelModule } from '@radzen/angular/dist/label';
 import { SidebarModule } from '@radzen/angular/dist/sidebar';
 import { PanelMenuModule } from '@radzen/angular/dist/panelmenu';
 import { FooterModule } from '@radzen/angular/dist/footer';
+import { ContentModule } from '@radzen/angular/dist/content';
+import { HeadingModule } from '@radzen/angular/dist/heading';
+import { LoginModule } from '@radzen/angular/dist/login';
+import { ButtonModule } from '@radzen/angular/dist/button';
+import { GridModule } from '@radzen/angular/dist/grid';
+import { FormModule } from '@radzen/angular/dist/form';
 import { SharedModule } from '@radzen/angular/dist/shared';
 import { NotificationModule } from '@radzen/angular/dist/notification';
 import { DialogModule } from '@radzen/angular/dist/dialog';
@@ -25,11 +31,20 @@ import { AppRoutes } from './app.routes';
 import { AppComponent } from './app.component';
 import { CacheInterceptor } from './cache.interceptor';
 export { AppComponent } from './app.component';
+import { LoginComponent } from './login/login.component';
+import { ProdutosNoArmazemComponent } from './produtos-no-armazém/produtos-no-armazém.component';
+import { ProdutosParaRestockComponent } from './produtos-para-restock/produtos-para-restock.component';
+import { EditProductsInWarehouseComponent } from './edit-products-in-warehouse/edit-products-in-warehouse.component';
 import { LoginLayoutComponent } from './login-layout/login-layout.component';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
 
+import { SqlProjectFinalService } from './sql-project-final.service';
 
 export const PageDeclarations = [
+  LoginComponent,
+  ProdutosNoArmazemComponent,
+  ProdutosParaRestockComponent,
+  EditProductsInWarehouseComponent,
 ];
 
 export const LayoutDeclarations = [
@@ -49,6 +64,7 @@ export const AppProviders = [
     useClass: CacheInterceptor,
     multi: true
   },
+  SqlProjectFinalService,
   ConfigService,
   {
     provide: APP_INITIALIZER,
@@ -72,6 +88,12 @@ export const AppImports = [
   SidebarModule,
   PanelMenuModule,
   FooterModule,
+  ContentModule,
+  HeadingModule,
+  LoginModule,
+  ButtonModule,
+  GridModule,
+  FormModule,
   SharedModule,
   NotificationModule,
   DialogModule,

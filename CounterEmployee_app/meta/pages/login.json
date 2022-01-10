@@ -12,13 +12,13 @@
           "type": "heading"
         },
         {
-          "name": "heading0",
-          "size": "H6",
+          "name": "Welcome",
+          "size": "H5",
           "text": "Bem Vindo!",
           "type": "heading"
         },
         {
-          "name": "Welcome text",
+          "name": "insert",
           "size": "H6",
           "text": "Introduza as suas credenciais para começar.",
           "type": "heading"

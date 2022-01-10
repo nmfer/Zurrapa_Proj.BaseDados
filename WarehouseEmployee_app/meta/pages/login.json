@@ -12,16 +12,30 @@
           "type": "heading"
         },
         {
-          "name": "login0",
-          "type": "login",
+          "name": "welcome",
+          "size": "H5",
+          "text": "Bem Vindo!",
+          "type": "heading"
+        },
+        {
+          "name": "insert",
+          "size": "H6",
+          "text": "Introduza as suas credenciais para começar.",
+          "type": "heading"
+        },
+        {
+          "allowRegister": false,
+          "allowResetPassword": false,
           "loginText": "Login",
-          "registerText": "Sign up",
-          "registerMessageText": "Don't have an account yet?",
-          "userText": "Username",
-          "userRequired": "Username is required",
+          "name": "login0",
+          "passwordRequired": "Introduza a sua password",
           "passwordText": "Password",
-          "passwordRequired": "Password is required",
-          "resetPasswordText": "Forgot password"
+          "registerMessageText": "Don't have an account yet?",
+          "registerText": "Sign up",
+          "resetPasswordText": "Forgot password",
+          "type": "login",
+          "userRequired": "Introduza o seu UserID ",
+          "userText": "UserID"
         }
       ],
       "container": "main",

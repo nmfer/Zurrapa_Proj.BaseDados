@@ -12,13 +12,14 @@
   "name": "WarehouseEmployee",
   "navigation": [
     "Login",
-    "Produtos no Armazém"
+    "Produtos no Armazém",
+    "Produtos para Restock"
   ],
   "pages": [
     "Login",
     "Produtos no Armazém",
-    "Add Produtos no Armazém",
-    "Edit Produtos no Armazém"
+    "Produtos para Restock",
+    "Edit ProductsInWarehouse"
   ],
   "serverLang": "cs",
   "serverProject": true,

@@ -47,6 +47,28 @@
     {
       "components": [
         {
+          "items": [
+            {
+              "path": "produtos-no-armazem",
+              "target": "_self",
+              "text": "Produtos no Armazém"
+            },
+            {
+              "path": "edit-products-in-warehouse",
+              "target": "_self",
+              "text": "Adicionar Quantidade "
+            },
+            {
+              "path": "produtos-para-restock",
+              "target": "_self",
+              "text": "Produtos para Restock em Bar"
+            },
+            {
+              "path": "login",
+              "target": "_self",
+              "text": "Logout"
+            }
+          ],
           "name": "panelmenu0",
           "style": {
             "height": "100%"

@@ -1,0 +1,215 @@
+{
+  "components": [
+    {
+      "components": [
+        {
+          "components": [
+            {
+              "class": "col-md-12",
+              "components": [
+                {
+                  "data": "",
+                  "events": {
+                    "cancel": [
+                      {
+                        "type": "back"
+                      }
+                    ],
+                    "submit": [
+                      {
+                        "error": [
+                          {
+                            "detail": "Unable to create new Order!",
+                            "severity": "error",
+                            "summary": "Error",
+                            "type": "notify"
+                          }
+                        ],
+                        "name": "sql_project_final.createOrder",
+                        "parameters": [
+                          {
+                            "name": "Order",
+                            "value": "${event}"
+                          }
+                        ],
+                        "then": [
+                          {
+                            "type": "back"
+                          }
+                        ],
+                        "type": "invoke"
+                      }
+                    ]
+                  },
+                  "fields": [
+                    {
+                      "maxText": "cannot be more than",
+                      "minText": "cannot be less than",
+                      "property": "table_number",
+                      "required": true,
+                      "requiredText": "is required",
+                      "title": "Mesa",
+                      "type": "integer"
+                    },
+                    {
+                      "maxText": "cannot be more than",
+                      "minText": "cannot be less than",
+                      "property": "total_price",
+                      "required": true,
+                      "requiredText": "is required",
+                      "title": "Preço Total",
+                      "type": "number"
+                    },
+                    {
+                      "maxLength": 30,
+                      "property": "order_status",
+                      "required": true,
+                      "requiredText": "is required",
+                      "title": "Estado do Pedido",
+                      "type": "string"
+                    }
+                  ],
+                  "name": "form0",
+                  "type": "form"
+                }
+              ],
+              "type": "col"
+            }
+          ],
+          "type": "row"
+        },
+        {
+          "data": "",
+          "fields": [
+            {
+              "property": "id_product",
+              "title": "ID Produto",
+              "type": "integer",
+              "requiredText": "is required",
+              "minText": "cannot be less than",
+              "maxText": "cannot be more than"
+            },
+            {
+              "property": "name",
+              "title": "Nome",
+              "type": "string",
+              "requiredText": "is required"
+            }
+          ],
+          "name": "form1",
+          "type": "form"
+        },
+        {
+          "allowFiltering": true,
+          "allowPaging": true,
+          "allowSorting": true,
+          "columns": [
+            {
+              "property": "id_order",
+              "title": "Id Order",
+              "type": "integer"
+            },
+            {
+              "property": "id_product",
+              "title": "Id Product",
+              "type": "integer"
+            },
+            {
+              "property": "name",
+              "title": "Name",
+              "type": "string"
+            }
+          ],
+          "count": "${getProductsOrdersCount}",
+          "data": "${getProductsOrdersResult}",
+          "events": {
+            "loadData": [
+              {
+                "name": "sql_project_final.getProductsOrders",
+                "parameters": [
+                  {
+                    "name": "$top",
+                    "value": "event.top"
+                  },
+                  {
+                    "name": "$skip",
+                    "value": "event.skip"
+                  },
+                  {
+                    "name": "$count",
+                    "value": "event.top != null && event.skip != null"
+                  },
+                  {
+                    "name": "$filter",
+                    "value": "${event.filter}"
+                  },
+                  {
+                    "name": "$orderby",
+                    "value": "${event.orderby}"
+                  }
+                ],
+                "then": [
+                  {
+                    "name": "getProductsOrdersResult",
+                    "type": "set",
+                    "value": "${result.value}"
+                  },
+                  {
+                    "name": "getProductsOrdersCount",
+                    "type": "set",
+                    "value": "event.top != null && event.skip != null ? result['@odata.count'] : ${result.value.length}"
+                  }
+                ],
+                "type": "invoke"
+              }
+            ]
+          },
+          "name": "grid0",
+          "pageSize": 10,
+          "type": "grid",
+          "confirmDeleteText": "Are you sure you want to delete this record?",
+          "confirmDeleteTitle": "Confirmation",
+          "confirmDeleteOkText": "Ok",
+          "confirmDeleteCancelText": "Cancel",
+          "emptyText": "No records to display.",
+          "addText": "Add",
+          "clearFilterText": "Clear",
+          "applyFilterText": "Apply",
+          "equalsText": "Equals",
+          "notEqualsText": "Not equals",
+          "lessThanText": "Less than",
+          "lessThanOrEqualsText": "Less than or equals",
+          "greaterThanText": "Greater than",
+          "greaterThanOrEqualsText": "Greater than or equals",
+          "endsWithText": "Ends with",
+          "containsText": "Contains",
+          "startsWithText": "Starts with"
+        }
+      ],
+      "container": "main",
+      "type": "content"
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "sql_project_final.getBars",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getBarsResult",
+            "type": "set",
+            "value": "${result.value}"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "code": "this.grid0.load();",
+        "type": "execute"
+      }
+    ]
+  },
+  "layout": "Main_Menu",
+  "name": "Novo Pedido"
+}

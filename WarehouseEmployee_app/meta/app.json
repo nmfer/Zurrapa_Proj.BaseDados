@@ -1,0 +1,28 @@
+{
+  "dataSources": [
+    "sql_project_final"
+  ],
+  "generator": "@radzen/angular-generator",
+  "https": false,
+  "layouts": [
+    "Login",
+    "Main"
+  ],
+  "logo": "",
+  "name": "WarehouseEmployee",
+  "navigation": [
+    "Login",
+    "Produtos no Armazém"
+  ],
+  "pages": [
+    "Login",
+    "Produtos no Armazém",
+    "Add Produtos no Armazém",
+    "Edit Produtos no Armazém"
+  ],
+  "serverLang": "cs",
+  "serverProject": true,
+  "serverVersion": "6",
+  "startPage": "Login",
+  "theme": "default"
+}

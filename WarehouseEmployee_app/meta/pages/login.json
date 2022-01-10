@@ -1,0 +1,33 @@
+{
+  "access": [
+    "Everybody"
+  ],
+  "components": [
+    {
+      "components": [
+        {
+          "name": "pageTitle",
+          "size": "H1",
+          "text": "Login",
+          "type": "heading"
+        },
+        {
+          "name": "login0",
+          "type": "login",
+          "loginText": "Login",
+          "registerText": "Sign up",
+          "registerMessageText": "Don't have an account yet?",
+          "userText": "Username",
+          "userRequired": "Username is required",
+          "passwordText": "Password",
+          "passwordRequired": "Password is required",
+          "resetPasswordText": "Forgot password"
+        }
+      ],
+      "container": "main",
+      "type": "content"
+    }
+  ],
+  "layout": "Login",
+  "name": "Login"
+}

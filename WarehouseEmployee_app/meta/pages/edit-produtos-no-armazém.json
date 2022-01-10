@@ -1,0 +1,164 @@
+{
+  "components": [
+    {
+      "type": "content",
+      "container": "main",
+      "components": [
+        {
+          "type": "row",
+          "components": [
+            {
+              "type": "col",
+              "class": "col-md-12",
+              "components": [
+                {
+                  "data": "${productsinwarehouse}",
+                  "events": {
+                    "cancel": [
+                      {
+                        "type": "back"
+                      }
+                    ],
+                    "submit": [
+                      {
+                        "error": [
+                          {
+                            "detail": "Unable to update ProductsInWarehouse",
+                            "severity": "error",
+                            "summary": "Error",
+                            "type": "notify"
+                          }
+                        ],
+                        "name": "sql_project_final.updateProductsInWarehouse",
+                        "parameters": [
+                          {
+                            "name": "id_warehouse",
+                            "value": "${parameters.id_warehouse}"
+                          },
+                          {
+                            "name": "ProductsInWarehouse",
+                            "value": "${event}"
+                          }
+                        ],
+                        "then": [
+                          {
+                            "type": "back"
+                          }
+                        ],
+                        "type": "invoke"
+                      }
+                    ]
+                  },
+                  "fields": [
+                    {
+                      "data": "${getWarehousesResult}",
+                      "property": "id_warehouse",
+                      "required": true,
+                      "textProperty": "id_warehouse",
+                      "title": "Warehouse",
+                      "type": "lookup",
+                      "valueProperty": "id_warehouse",
+                      "placeholder": "Choose Warehouse"
+                    },
+                    {
+                      "property": "quantity",
+                      "required": true,
+                      "title": "Quantity",
+                      "type": "integer"
+                    },
+                    {
+                      "property": "purchase_price",
+                      "required": true,
+                      "title": "Purchase Price",
+                      "type": "number"
+                    },
+                    {
+                      "property": "minimum_quantity",
+                      "required": true,
+                      "title": "Minimum Quantity",
+                      "type": "integer"
+                    },
+                    {
+                      "property": "total_quantity",
+                      "required": true,
+                      "title": "Total Quantity",
+                      "type": "integer"
+                    },
+                    {
+                      "data": "${getProductsResult}",
+                      "property": "id_product",
+                      "required": true,
+                      "textProperty": "category",
+                      "title": "Product",
+                      "type": "lookup",
+                      "valueProperty": "id_product",
+                      "placeholder": "Choose Product"
+                    },
+                    {
+                      "property": "name",
+                      "required": true,
+                      "title": "Name",
+                      "type": "string",
+                      "maxLength": 40
+                    }
+                  ],
+                  "name": "form0",
+                  "type": "form",
+                  "visible": "productsinwarehouse"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "sql_project_final.getProductsInWarehouseByid_warehouse",
+        "parameters": [
+          {
+            "name": "id_warehouse",
+            "value": "${parameters.id_warehouse}"
+          }
+        ],
+        "then": [
+          {
+            "name": "productsinwarehouse",
+            "type": "set",
+            "value": "${result}"
+          }
+        ],
+        "error": [],
+        "type": "invoke"
+      },
+      {
+        "name": "sql_project_final.getWarehouses",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getWarehousesResult",
+            "type": "set",
+            "value": "${result.value}"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "name": "sql_project_final.getProducts",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getProductsResult",
+            "type": "set",
+            "value": "${result.value}"
+          }
+        ],
+        "type": "invoke"
+      }
+    ]
+  },
+  "name": "Edit Produtos No Armazem",
+  "layout": "Main"
+}

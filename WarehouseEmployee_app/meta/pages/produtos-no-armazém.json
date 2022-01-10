@@ -1,0 +1,195 @@
+{
+  "components": [
+    {
+      "type": "content",
+      "container": "main",
+      "components": [
+        {
+          "type": "heading",
+          "name": "pageTitle",
+          "size": "H1",
+          "text": "Produtos no Armazém"
+        },
+        {
+          "type": "row",
+          "components": [
+            {
+              "type": "col",
+              "class": "col-md-12",
+              "components": [
+                {
+                  "name": "grid0",
+                  "allowDelete": true,
+                  "confirmDelete": true,
+                  "allowAdd": true,
+                  "allowFiltering": true,
+                  "allowMultiSorting": false,
+                  "allowPaging": true,
+                  "allowSorting": true,
+                  "count": "${getProductsInWarehousesCount}",
+                  "data": "${getProductsInWarehousesResult}",
+                  "events": {
+                    "loadData": [
+                      {
+                        "name": "sql_project_final.getProductsInWarehouses",
+                        "parameters": [
+                          {
+                            "name": "$top",
+                            "value": "event.top"
+                          },
+                          {
+                            "name": "$skip",
+                            "value": "event.skip"
+                          },
+                          {
+                            "name": "$count",
+                            "value": "event.top != null && event.skip != null"
+                          },
+                          {
+                            "name": "$filter",
+                            "value": "${event.filter}"
+                          },
+                          {
+                            "name": "$orderby",
+                            "value": "${event.orderby}"
+                          },
+                          {
+                            "name": "$expand",
+                            "value": "Warehouse,Product"
+                          }
+                        ],
+                        "then": [
+                          {
+                            "name": "getProductsInWarehousesResult",
+                            "type": "set",
+                            "value": "${result.value}"
+                          },
+                          {
+                            "name": "getProductsInWarehousesCount",
+                            "type": "set",
+                            "value": "event.top != null && event.skip != null ? result['@odata.count'] : ${result.value.length}"
+                          }
+                        ],
+                        "type": "invoke",
+                        "error": [
+                          {
+                            "detail": "Unable to load ProductsInWarehouses",
+                            "severity": "error",
+                            "summary": "Error",
+                            "type": "notify"
+                          }
+                        ]
+                      }
+                    ],
+                    "delete": [
+                      {
+                        "error": [
+                          {
+                            "detail": "Unable to delete ProductsInWarehouse",
+                            "severity": "error",
+                            "summary": "Error",
+                            "type": "notify"
+                          }
+                        ],
+                        "name": "sql_project_final.deleteProductsInWarehouse",
+                        "parameters": [
+                          {
+                            "name": "id_warehouse",
+                            "value": "${event.id_warehouse}"
+                          }
+                        ],
+                        "then": [
+                          {
+                            "detail": "ProductsInWarehouse deleted!",
+                            "severity": "success",
+                            "summary": "Success",
+                            "type": "notify"
+                          }
+                        ],
+                        "type": "invoke"
+                      }
+                    ],
+                    "add": [
+                      {
+                        "path": "add-produtos-no-armazem",
+                        "type": "popup"
+                      }
+                    ],
+                    "rowSelect": [
+                      {
+                        "parameters": [
+                          {
+                            "name": "id_warehouse",
+                            "value": "${event.id_warehouse}"
+                          }
+                        ],
+                        "path": "edit-produtos-no-armazem",
+                        "type": "popup"
+                      }
+                    ]
+                  },
+                  "title": "",
+                  "columns": [
+                    {
+                      "property": "id_warehouse",
+                      "sortProperty": "Warehouse.id_warehouse",
+                      "filterProperty": "Warehouse.id_warehouse",
+                      "template": "${data.Warehouse?.id_warehouse}",
+                      "title": "Warehouse",
+                      "type": "integer"
+                    },
+                    {
+                      "property": "quantity",
+                      "title": "Quantity",
+                      "type": "integer"
+                    },
+                    {
+                      "property": "purchase_price",
+                      "title": "Purchase Price",
+                      "type": "number",
+                      "format": "double"
+                    },
+                    {
+                      "property": "minimum_quantity",
+                      "title": "Minimum Quantity",
+                      "type": "integer"
+                    },
+                    {
+                      "property": "total_quantity",
+                      "title": "Total Quantity",
+                      "type": "integer"
+                    },
+                    {
+                      "property": "id_product",
+                      "sortProperty": "Product.category",
+                      "filterProperty": "Product.category",
+                      "template": "${data.Product?.category}",
+                      "title": "Product",
+                      "type": "string"
+                    },
+                    {
+                      "property": "name",
+                      "title": "Name",
+                      "type": "string"
+                    }
+                  ],
+                  "type": "grid"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "type": "execute",
+        "code": "this.grid0.load();"
+      }
+    ]
+  },
+  "name": "Produtos no Armazém",
+  "layout": "Main"
+}

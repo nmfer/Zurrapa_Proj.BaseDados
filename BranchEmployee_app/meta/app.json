@@ -1,0 +1,20 @@
+{
+  "dataSources": [
+    "sql_project_final"
+  ],
+  "generator": "@radzen/angular-generator",
+  "https": false,
+  "layouts": [
+    "Login",
+    "Main"
+  ],
+  "logo": "",
+  "name": "BranchEmployee",
+  "navigation": [],
+  "pages": [],
+  "serverLang": "cs",
+  "serverProject": true,
+  "serverVersion": "6",
+  "startPage": null,
+  "theme": "default"
+}

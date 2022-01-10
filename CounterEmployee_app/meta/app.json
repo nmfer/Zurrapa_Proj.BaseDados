@@ -1,0 +1,31 @@
+{
+  "dataSources": [
+    "sql_project_final"
+  ],
+  "generator": "@radzen/angular-generator",
+  "https": false,
+  "layouts": [
+    "Login",
+    "Main_Menu"
+  ],
+  "logo": "",
+  "name": "CounterEmployee",
+  "navigation": [
+    "Login",
+    "Produtos",
+    "Pedido",
+    "Produto para Repôr"
+  ],
+  "pages": [
+    "Login",
+    "Produtos",
+    "Pedido",
+    "Novo Pedido",
+    "Produto para Repôr"
+  ],
+  "serverLang": "cs",
+  "serverProject": true,
+  "serverVersion": "6",
+  "startPage": "Login",
+  "theme": "default"
+}

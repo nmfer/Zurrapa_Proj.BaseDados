@@ -1,0 +1,68 @@
+{
+  "access": [
+    "Everybody"
+  ],
+  "components": [
+    {
+      "components": [
+        {
+          "name": "pageTitle",
+          "size": "H1",
+          "text": "Login",
+          "type": "heading"
+        },
+        {
+          "name": "heading0",
+          "size": "H6",
+          "text": "Bem Vindo!",
+          "type": "heading"
+        },
+        {
+          "name": "Welcome text",
+          "size": "H6",
+          "text": "Introduza as suas credenciais para começar.",
+          "type": "heading"
+        },
+        {
+          "allowRegister": false,
+          "allowResetPassword": false,
+          "events": {
+            "login": [
+              {
+                "error": [
+                  {
+                    "path": "login",
+                    "type": "navigate"
+                  }
+                ],
+                "name": "sql_project_final.getListEmployees",
+                "parameters": [],
+                "then": [
+                  {
+                    "path": "pedidos",
+                    "type": "navigate"
+                  }
+                ],
+                "type": "invoke"
+              }
+            ]
+          },
+          "loginText": "Login",
+          "name": "login_counter_user",
+          "passwordRequired": "Introduza a sua Password",
+          "passwordText": "Password",
+          "registerMessageText": "Don't have an account yet?",
+          "registerText": "Sign up",
+          "resetPasswordText": "Forgot password",
+          "type": "login",
+          "userRequired": "Introduza o seu UserID ",
+          "userText": "UserID"
+        }
+      ],
+      "container": "main",
+      "type": "content"
+    }
+  ],
+  "layout": "Login",
+  "name": "Login"
+}

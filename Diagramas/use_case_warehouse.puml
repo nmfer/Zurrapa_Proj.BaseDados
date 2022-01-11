@@ -1,0 +1,12 @@
+@startuml
+left to right direction
+actor Empregado_Armazém
+rectangle Operações {
+    Empregado_Armazém -- (Login)
+    Empregado_Armazém -- (Logout)
+    (Login) .> (Logout)
+    Empregado_Armazém -- (Ver Stock Produtos)
+    Empregado_Armazém -- (Consultar Pedidos de Restock)
+    Empregado_Armazém -- (Adicionar Quantidade Produtos)
+}
+@enduml

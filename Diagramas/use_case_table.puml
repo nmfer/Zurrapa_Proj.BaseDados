@@ -1,0 +1,14 @@
+@startuml
+left to right direction
+actor Empregado_Mesa
+rectangle Operações {
+    Empregado_Mesa -- (Login)
+    Empregado_Mesa -- (Logout)
+    (Login) .> (Logout)
+    Empregado_Mesa -- (Realizar Novo Pedido)
+    (Realizar Novo Pedido) .> (Adicionar Produtos e Quantidade)
+    Empregado_Mesa -- (Alterar Pedido)
+    (Alterar Pedido) <. (Remover Produto)
+    (Alterar Pedido) <. (Alterar Quantidade)
+}
+@enduml

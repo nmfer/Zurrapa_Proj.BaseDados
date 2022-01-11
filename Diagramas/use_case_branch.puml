@@ -1,0 +1,18 @@
+@startuml
+left to right direction
+actor Empregado_Filial
+rectangle Operações {
+    Empregado_Filial -- (Login)
+    Empregado_Filial -- (Logout)
+    (Login) .> (Logout)
+    Empregado_Filial -- (Consultar Dados)
+    (Consultar Dados) <. (Consultar por Dia e Bar)
+    (Consultar Dados) <. (Consultar por Dia)
+    Empregado_Filial -- (Registar Novo Produtos)
+    (Registar Novo Produtos) .> (Indicar carateristicas do produto)
+    Empregado_Filial -- (Apagar Produto)
+    Empregado_Filial -- (Registar Novo Empregado)
+    (Registar Novo Empregado) .> (Introduzir detalhes do Empregado)
+    Empregado_Filial -- (Apagar Empregado)
+}
+@enduml

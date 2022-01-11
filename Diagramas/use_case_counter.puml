@@ -1,0 +1,18 @@
+@startuml
+left to right direction
+actor Empregado_Balcão
+rectangle Operações {
+    Empregado_Balcão -- (Login)
+    Empregado_Balcão -- (Logout)
+    (Login) .> (Logout)
+    Empregado_Balcão -- (Consultar Pedidos)
+    Empregado_Balcão -- (Realizar Novo Pedido)
+    (Realizar Novo Pedido) <. (Adicionar Produtos e Quantidade)
+    Empregado_Balcão -- (Requisitar Produtos ao Armazém)
+    (Requisitar Produtos ao Armazém) <. (Indicar Produto e Quantidade)
+    Empregado_Balcão -- (Alterar Pedido)
+    (Alterar Pedido) <. (Remover Produto)
+    (Alterar Pedido) <. (Alterar Quantidade)
+    Empregado_Balcão -- (Executar Pagamento)
+}
+@enduml

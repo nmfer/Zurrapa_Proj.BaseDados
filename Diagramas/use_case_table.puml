@@ -4,6 +4,7 @@ actor Empregado_Mesa
 rectangle Operações {
     Empregado_Mesa -- (Login)
     Empregado_Mesa -- (Logout)
+    Empregado_Mesa -- (Consultar Produtos)
     (Login) .> (Logout)
     Empregado_Mesa -- (Realizar Novo Pedido)
     (Realizar Novo Pedido) .> (Adicionar Produtos e Quantidade)

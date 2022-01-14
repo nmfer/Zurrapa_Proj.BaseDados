@@ -1,0 +1,17 @@
+@startuml
+left to right direction
+actor Empregado_Caixa
+rectangle Operações {
+    Empregado_Caixa -- (Login)
+    Empregado_Caixa -- (Logout)
+    (Login) .> (Logout)
+    Empregado_Caixa -- (Consultar Pedidos)
+    Empregado_Caixa -- (Realizar Novo Pedido)
+    (Realizar Novo Pedido) <. (Adicionar Produtos e Quantidade)
+    Empregado_Caixa -- (Requisitar Produtos ao Armazém)
+    Empregado_Caixa -- (Alterar Pedido)
+    (Alterar Pedido) <. (Remover Produto)
+    (Alterar Pedido) <. (Alterar Quantidade)
+    Empregado_Caixa -- (Executar Pagamento)
+}
+@enduml

@@ -5,6 +5,6 @@ Empregado_Balcão -- Empregado_Armazém
 rectangle Operações {
     Empregado_Armazém -- (Ver Stock Produtos)
     Empregado_Armazém -- (Consultar Pedidos de Restock)
-    Empregado_Armazém -- (Adicionar Quantidade Produtos)
+    Empregado_Armazém -- (Adicionar Stock ao Armazém)
 }
 @enduml

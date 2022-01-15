@@ -20,7 +20,7 @@ INSERT INTO Products(id_product, name, category) VALUES ((SELECT TOP 1(id_produc
 INSERT INTO Products(id_product, name, category) VALUES ((SELECT TOP 1(id_product) FROM Employees ORDER BY id_product DESC) + 1, 'pao de forma', 'pastelaria');
 INSERT INTO Products(id_product, name, category) VALUES ((SELECT TOP 1(id_product) FROM Employees ORDER BY id_product DESC) + 1, 'pao para cachorro', 'pastelaria');
 
--- INGREDIENTES
+-- INGREDIENTES -- MUDAR PARA SAGADOS
 INSERT INTO Products(id_product, name, category) VALUES ((SELECT TOP 1(id_product) FROM Employees ORDER BY id_product DESC) + 1, 'fiambre', 'ingrediente');
 INSERT INTO Products(id_product, name, category) VALUES ((SELECT TOP 1(id_product) FROM Employees ORDER BY id_product DESC) + 1, 'queijo', 'ingrediente');
 INSERT INTO Products(id_product, name, category) VALUES ((SELECT TOP 1(id_product) FROM Employees ORDER BY id_product DESC) + 1, 'manteiga', 'ingrediente');

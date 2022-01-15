@@ -1,0 +1,18 @@
+﻿@page "/"
+@page "/login"
+@layout LoginLayout
+@inherits Filial.Pages.LoginComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using Filial.Models.SqlServerDemo
+<RadzenContent Container="main">
+  <ChildContent>
+    <RadzenHeading Size="H1" Text="Bem Vindo!">
+    </RadzenHeading>
+    <RadzenHeading Size="H6" Text="Introduza as suas credenciais:">
+    </RadzenHeading>
+    <RadzenLogin AllowRegister="false" AllowResetPassword="false" PasswordRequired="Introduza a Password" UserRequired="Introduza o UserID" UserText="UserID">
+    </RadzenLogin>
+  </ChildContent>
+</RadzenContent>

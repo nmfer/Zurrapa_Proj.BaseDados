@@ -1,0 +1,34 @@
+{
+  "access": "Everybody",
+  "components": [
+    {
+      "components": [
+        {
+          "name": "pageTitle",
+          "size": "H1",
+          "text": "Bem Vindo!",
+          "type": "heading"
+        },
+        {
+          "name": "heading0",
+          "size": "H6",
+          "text": "Introduza as suas credenciais:",
+          "type": "heading"
+        },
+        {
+          "allowRegister": false,
+          "allowResetPassword": false,
+          "name": "login0",
+          "passwordRequired": "Introduza a Password",
+          "type": "login",
+          "userRequired": "Introduza o UserID",
+          "userText": "UserID"
+        }
+      ],
+      "container": "main",
+      "type": "content"
+    }
+  ],
+  "layout": "Login",
+  "name": "Login"
+}

@@ -1,0 +1,200 @@
+{
+  "components": [
+    {
+      "type": "content",
+      "container": "main",
+      "components": [
+        {
+          "type": "heading",
+          "name": "pageTitle",
+          "size": "H1",
+          "text": "Produtos no Armazém"
+        },
+        {
+          "type": "row",
+          "components": [
+            {
+              "type": "col",
+              "class": "col-md-12",
+              "components": [
+                {
+                  "icon": "add_circle_outline",
+                  "name": "button0",
+                  "style": {
+                    "marginBottom": "10px"
+                  },
+                  "text": "Add",
+                  "type": "button",
+                  "events": {
+                    "click": [
+                      {
+                        "path": "add-produtos-no-armazem",
+                        "type": "popup",
+                        "then": [
+                          {
+                            "code": "await grid0.Reload();",
+                            "type": "execute"
+                          },
+                          {
+                            "code": "await InvokeAsync(() => { StateHasChanged(); });",
+                            "type": "execute"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "grid0",
+                  "allowFiltering": true,
+                  "filterMode": "advanced",
+                  "allowPaging": true,
+                  "allowSorting": true,
+                  "data": "${getProductsInWarehousesResult}",
+                  "events": {
+                    "loadData": [],
+                    "rowSelect": [
+                      {
+                        "parameters": [
+                          {
+                            "name": "id_warehouse",
+                            "value": "${event.id_warehouse}"
+                          }
+                        ],
+                        "path": "edit-produtos-no-armazem",
+                        "type": "popup",
+                        "then": [
+                          {
+                            "code": "await grid0.Reload();",
+                            "type": "execute"
+                          },
+                          {
+                            "code": "await InvokeAsync(() => { StateHasChanged(); });",
+                            "type": "execute"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "title": "",
+                  "columns": [
+                    {
+                      "property": "id_warehouse",
+                      "sortProperty": "Warehouse.address",
+                      "groupProperty": "Warehouse.address",
+                      "filterProperty": "Warehouse.address",
+                      "template": "${data.Warehouse?.address}",
+                      "title": "Warehouse"
+                    },
+                    {
+                      "property": "id_product",
+                      "sortProperty": "Product.name",
+                      "groupProperty": "Product.name",
+                      "filterProperty": "Product.name",
+                      "template": "${data.Product?.name}",
+                      "title": "Product"
+                    },
+                    {
+                      "property": "set_to_unit",
+                      "title": "Set To Unit"
+                    },
+                    {
+                      "property": "minimum_quantity",
+                      "title": "Minimum Quantity"
+                    },
+                    {
+                      "property": "quantity",
+                      "title": "Quantity"
+                    },
+                    {
+                      "property": "total_quantity",
+                      "title": "Total Quantity"
+                    },
+                    {
+                      "filterable": false,
+                      "sortable": false,
+                      "width": "70px",
+                      "textAlign": "center",
+                      "template": [
+                        {
+                          "attributes": [
+                            {
+                              "name": "@onclick:stopPropagation",
+                              "value": true
+                            }
+                          ],
+                          "buttonStyle": "danger",
+                          "icon": "close",
+                          "name": "gridDeleteButton",
+                          "text": "",
+                          "size": "sm",
+                          "type": "button",
+                          "events": {
+                            "click": [
+                              {
+                                "condition": "await DialogService.Confirm(\"Are you sure you want to delete this record?\") == true",
+                                "error": [
+                                  {
+                                    "detail": "Unable to delete ProductsInWarehouse",
+                                    "severity": "error",
+                                    "summary": "Error",
+                                    "type": "notify"
+                                  }
+                                ],
+                                "name": "sql_server_demo.deleteProductsInWarehouse",
+                                "parameters": [
+                                  {
+                                    "name": "id_warehouse",
+                                    "value": "${data.id_warehouse}"
+                                  }
+                                ],
+                                "then": [
+                                  {
+                                    "code": "await grid0.Reload();",
+                                    "condition": "result != null",
+                                    "type": "execute"
+                                  }
+                                ],
+                                "type": "invoke"
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  ],
+                  "type": "datagrid",
+                  "itemType": "Filial.Models.SqlServerDemo.ProductsInWarehouse"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "sql_server_demo.getProductsInWarehouses",
+        "parameters": [
+          {
+            "name": "$expand",
+            "value": "Product"
+          }
+        ],
+        "then": [
+          {
+            "name": "getProductsInWarehousesResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<Filial.Models.SqlServerDemo.ProductsInWarehouse>"
+          }
+        ],
+        "type": "invoke"
+      }
+    ]
+  },
+  "name": "Produtos no Armazém",
+  "layout": "Main"
+}

@@ -1,0 +1,379 @@
+{
+  "components": [
+    {
+      "type": "content",
+      "container": "main",
+      "components": [
+        {
+          "type": "row",
+          "components": [
+            {
+              "type": "col",
+              "class": "col-md-12",
+              "components": [
+                {
+                  "type": "template-form",
+                  "name": "form0",
+                  "components": [
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Warehouse",
+                              "component": "id_warehouse",
+                              "name": "id_warehouseLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "data": "${getWarehousesResult}",
+                              "textProperty": "address",
+                              "valueProperty": "id_warehouse",
+                              "placeholder": "Choose Warehouse",
+                              "valueType": "int",
+                              "type": "dropdown",
+                              "name": "id_warehouse",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "value": "${productsinwarehouse.id_warehouse}"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "id_warehouseRequiredValidator",
+                              "component": "id_warehouse",
+                              "text": "id_warehouse is required",
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "defaultValue": "0"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Product",
+                              "component": "id_product",
+                              "name": "id_productLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "data": "${getProductsResult}",
+                              "textProperty": "name",
+                              "valueProperty": "id_product",
+                              "placeholder": "Choose Product",
+                              "valueType": "int",
+                              "type": "dropdown",
+                              "name": "id_product",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "value": "${productsinwarehouse.id_product}"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "id_productRequiredValidator",
+                              "component": "id_product",
+                              "text": "id_product is required",
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "defaultValue": "0"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Set To Unit",
+                              "component": "set_to_unit",
+                              "name": "set_to_unitLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "int",
+                              "type": "numeric",
+                              "name": "set_to_unit",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "value": "${productsinwarehouse.set_to_unit}"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "set_to_unitRequiredValidator",
+                              "component": "set_to_unit",
+                              "text": "set_to_unit is required",
+                              "style": {
+                                "position": "absolute"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Minimum Quantity",
+                              "component": "minimum_quantity",
+                              "name": "minimum_quantityLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "double",
+                              "type": "numeric",
+                              "name": "minimum_quantity",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "value": "${productsinwarehouse.minimum_quantity}"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "minimum_quantityRequiredValidator",
+                              "component": "minimum_quantity",
+                              "text": "minimum_quantity is required",
+                              "style": {
+                                "position": "absolute"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Quantity",
+                              "component": "quantity",
+                              "name": "quantityLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "double",
+                              "type": "numeric",
+                              "name": "quantity",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "value": "${productsinwarehouse.quantity}"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "quantityRequiredValidator",
+                              "component": "quantity",
+                              "text": "quantity is required",
+                              "style": {
+                                "position": "absolute"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col offset-sm-3",
+                          "components": [
+                            {
+                              "type": "button",
+                              "buttonType": "submit",
+                              "icon": "save",
+                              "text": "Save",
+                              "buttonStyle": "primary"
+                            },
+                            {
+                              "type": "button",
+                              "buttonStyle": "light",
+                              "style": {
+                                "marginLeft": "1rem"
+                              },
+                              "text": "Cancel",
+                              "events": {
+                                "click": [
+                                  {
+                                    "type": "close-popup"
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "events": {
+                    "submit": [
+                      {
+                        "error": [
+                          {
+                            "detail": "Unable to create new ProductsInWarehouse!",
+                            "severity": "error",
+                            "summary": "Error",
+                            "type": "notify"
+                          }
+                        ],
+                        "name": "sql_server_demo.createProductsInWarehouse",
+                        "parameters": [
+                          {
+                            "name": "ProductsInWarehouse",
+                            "value": "${productsinwarehouse}"
+                          }
+                        ],
+                        "then": [
+                          {
+                            "type": "close-popup",
+                            "result": "${productsinwarehouse}"
+                          }
+                        ],
+                        "type": "invoke"
+                      }
+                    ]
+                  },
+                  "data": "${productsinwarehouse}",
+                  "visible": "${productsinwarehouse != null}",
+                  "itemType": "Filial.Models.SqlServerDemo.ProductsInWarehouse"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "sql_server_demo.getWarehouses",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getWarehousesResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<Filial.Models.SqlServerDemo.Warehouse>"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "name": "sql_server_demo.getProducts",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getProductsResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<Filial.Models.SqlServerDemo.Product>"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "name": "productsinwarehouse",
+        "type": "set",
+        "value": "new Filial.Models.SqlServerDemo.ProductsInWarehouse(){}",
+        "valueType": "Filial.Models.SqlServerDemo.ProductsInWarehouse"
+      }
+    ]
+  },
+  "name": "Add Produtos No Armazem",
+  "layout": "Main"
+}

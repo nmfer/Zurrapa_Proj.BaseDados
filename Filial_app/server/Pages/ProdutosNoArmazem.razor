@@ -1,0 +1,47 @@
+﻿@page "/produtos-no-armazém"
+@layout MainLayout
+@inherits Filial.Pages.ProdutosNoArmazemComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using Filial.Models.SqlServerDemo
+<RadzenContent Container="main">
+  <ChildContent>
+    <RadzenHeading Size="H1" Text="Produtos no Armazém">
+    </RadzenHeading>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenButton Icon="add_circle_outline" style="margin-bottom: 10px" Text="Add" Click="@Button0Click">
+        </RadzenButton>
+        <RadzenDataGrid @ref="grid0" AllowFiltering="true" FilterMode="Radzen.FilterMode.Advanced" AllowPaging="true" AllowSorting="true" Data="@getProductsInWarehousesResult" TItem="Filial.Models.SqlServerDemo.ProductsInWarehouse" RowSelect="@Grid0RowSelect">
+          <Columns>
+            <RadzenDataGridColumn TItem="Filial.Models.SqlServerDemo.ProductsInWarehouse" Property="id_warehouse" SortProperty="Warehouse.address" GroupProperty="Warehouse.address" FilterProperty="Warehouse.address" Title="Warehouse">
+              <Template Context="data">
+              @(data.Warehouse?.address)
+              </Template>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Filial.Models.SqlServerDemo.ProductsInWarehouse" Property="id_product" SortProperty="Product.name" GroupProperty="Product.name" FilterProperty="Product.name" Title="Product">
+              <Template Context="data">
+              @(data.Product?.name)
+              </Template>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Filial.Models.SqlServerDemo.ProductsInWarehouse" Property="set_to_unit" Title="Set To Unit">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Filial.Models.SqlServerDemo.ProductsInWarehouse" Property="minimum_quantity" Title="Minimum Quantity">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Filial.Models.SqlServerDemo.ProductsInWarehouse" Property="quantity" Title="Quantity">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Filial.Models.SqlServerDemo.ProductsInWarehouse" Property="total_quantity" Title="Total Quantity">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Filial.Models.SqlServerDemo.ProductsInWarehouse" Filterable="false" Sortable="false" Width="70px" TextAlign="TextAlign.Center">
+              <Template Context="filialModelsSqlServerDemoProductsInWarehouse">
+                <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="close" Size="ButtonSize.Small" Click="@((args) =>GridDeleteButtonClick(args, filialModelsSqlServerDemoProductsInWarehouse))" @onclick:stopPropagation="true">
+                </RadzenButton>
+              </Template>
+            </RadzenDataGridColumn>
+          </Columns>
+        </RadzenDataGrid>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

@@ -1,0 +1,3002 @@
+{
+  "info": {
+    "title": "sql_server_demo",
+    "x-type": "odata",
+    "x-connector": "mssql",
+    "x-connector-version": 15
+  },
+  "definitions": {
+    "Bar": {
+      "x-table": "dbo.Bar",
+      "resource": "Bars",
+      "required": [
+        "id_bar",
+        "id_branch",
+        "phone_num",
+        "address",
+        "id_responsible"
+      ],
+      "properties": {
+        "id_bar": {
+          "x-key": true,
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer",
+          "x-navigation": [
+            {
+              "inversePropertyName": "Bar",
+              "name": "ProductsInBars",
+              "type": "ProductsInBar"
+            },
+            {
+              "inversePropertyName": "Bar",
+              "name": "Orders",
+              "type": "Order"
+            },
+            {
+              "inversePropertyName": "Bar",
+              "name": "DayBarBranches",
+              "type": "DayBarBranch"
+            }
+          ]
+        },
+        "id_branch": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "phone_num": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "address": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 40
+        },
+        "id_responsible": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "ProductsInBars": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ProductsInBar"
+          }
+        },
+        "Orders": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Order"
+          }
+        },
+        "DayBarBranches": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DayBarBranch"
+          }
+        }
+      }
+    },
+    "Branch": {
+      "x-table": "dbo.Branch",
+      "resource": "Branches",
+      "required": [
+        "id_branch",
+        "designation",
+        "email",
+        "phone_num",
+        "address",
+        "id_manager"
+      ],
+      "properties": {
+        "id_branch": {
+          "x-key": true,
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer",
+          "x-navigation": [
+            {
+              "inversePropertyName": "Branch",
+              "name": "DayBranches",
+              "type": "DayBranch"
+            }
+          ]
+        },
+        "designation": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 40
+        },
+        "email": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 40
+        },
+        "phone_num": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "address": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 40
+        },
+        "id_manager": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "DayBranches": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DayBranch"
+          }
+        }
+      }
+    },
+    "DayBarBranch": {
+      "x-table": "dbo.Day_Bar_Branch",
+      "resource": "DayBarBranches",
+      "required": [
+        "date",
+        "id_branch",
+        "id_bar",
+        "total_received",
+        "total_spent"
+      ],
+      "properties": {
+        "date": {
+          "x-key": true,
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer",
+          "x-navigation": [
+            {
+              "inversePropertyName": "DayBarBranch",
+              "name": "DayBranches",
+              "type": "DayBranch"
+            }
+          ]
+        },
+        "id_branch": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "Bar": {
+          "type": "object",
+          "$ref": "#/definitions/Bar"
+        },
+        "id_bar": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer",
+          "x-foreignKey": {
+            "parentTable": "Bar",
+            "parentEntityType": "Bar",
+            "type": "Bar",
+            "principalKey": "id_bar",
+            "name": "Bar",
+            "textProperty": "address",
+            "navigationProperty": "DayBarBranches"
+          }
+        },
+        "total_received": {
+          "x-nullable": false,
+          "x-precision": 53,
+          "type": "number",
+          "format": "double"
+        },
+        "total_spent": {
+          "x-nullable": false,
+          "x-precision": 53,
+          "type": "number",
+          "format": "double"
+        },
+        "DayBranches": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DayBranch"
+          }
+        }
+      }
+    },
+    "DayBranch": {
+      "x-table": "dbo.Day_Branch",
+      "resource": "DayBranches",
+      "required": [
+        "date",
+        "id_branch",
+        "total_received",
+        "total_spent"
+      ],
+      "properties": {
+        "DayBarBranch": {
+          "type": "object",
+          "$ref": "#/definitions/DayBarBranch"
+        },
+        "date": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer",
+          "x-key": true,
+          "x-foreignKey": {
+            "parentTable": "Day_Bar_Branch",
+            "parentEntityType": "DayBarBranch",
+            "type": "DayBarBranch",
+            "principalKey": "date",
+            "name": "DayBarBranch",
+            "textProperty": "date",
+            "navigationProperty": "DayBranches"
+          }
+        },
+        "Branch": {
+          "type": "object",
+          "$ref": "#/definitions/Branch"
+        },
+        "id_branch": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer",
+          "x-foreignKey": {
+            "parentTable": "Branch",
+            "parentEntityType": "Branch",
+            "type": "Branch",
+            "principalKey": "id_branch",
+            "name": "Branch",
+            "textProperty": "designation",
+            "navigationProperty": "DayBranches"
+          }
+        },
+        "total_received": {
+          "x-nullable": false,
+          "x-precision": 53,
+          "type": "number",
+          "format": "double"
+        },
+        "total_spent": {
+          "x-nullable": false,
+          "x-precision": 53,
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "EmpWarehouse": {
+      "x-table": "dbo.Emp_Warehouse",
+      "resource": "EmpWarehouses",
+      "required": [
+        "id_warehouse",
+        "id_num",
+        "id_bar"
+      ],
+      "properties": {
+        "id_warehouse": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer",
+          "x-key": true,
+          "x-virtual": true
+        },
+        "id_num": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "id_bar": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        }
+      },
+      "x-view": true
+    },
+    "Employee": {
+      "x-table": "dbo.Employee",
+      "resource": "Employees",
+      "required": [
+        "id_num",
+        "name",
+        "type",
+        "pwd",
+        "emp_warehouse"
+      ],
+      "properties": {
+        "id_num": {
+          "x-key": true,
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer",
+          "x-navigation": [
+            {
+              "inversePropertyName": "Employee",
+              "name": "Orders",
+              "type": "Order"
+            }
+          ]
+        },
+        "name": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 40
+        },
+        "type": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 30
+        },
+        "pwd": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 30
+        },
+        "emp_warehouse": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 40
+        },
+        "Orders": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Order"
+          }
+        }
+      }
+    },
+    "ListEmployee": {
+      "x-table": "dbo.List_Employees",
+      "resource": "ListEmployees",
+      "required": [
+        "id_num",
+        "id_bar",
+        "id_branch",
+        "id_local",
+        "responsible",
+        "date",
+        "cod"
+      ],
+      "properties": {
+        "id_num": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer",
+          "x-key": true,
+          "x-virtual": true
+        },
+        "id_bar": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "id_branch": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "id_local": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "responsible": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 4
+        },
+        "date": {
+          "x-nullable": false,
+          "type": "string",
+          "format": "date-time",
+          "x-datetime": "date"
+        },
+        "cod": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        }
+      },
+      "x-view": true
+    },
+    "Order": {
+      "x-table": "dbo.Orders",
+      "resource": "Orders",
+      "required": [
+        "id_order",
+        "id_bar",
+        "id_num",
+        "table_number",
+        "total_price",
+        "order_status"
+      ],
+      "properties": {
+        "id_order": {
+          "x-key": true,
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "Bar": {
+          "type": "object",
+          "$ref": "#/definitions/Bar"
+        },
+        "id_bar": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer",
+          "x-foreignKey": {
+            "parentTable": "Bar",
+            "parentEntityType": "Bar",
+            "type": "Bar",
+            "principalKey": "id_bar",
+            "name": "Bar",
+            "textProperty": "address",
+            "navigationProperty": "Orders"
+          }
+        },
+        "Employee": {
+          "type": "object",
+          "$ref": "#/definitions/Employee"
+        },
+        "id_num": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer",
+          "x-foreignKey": {
+            "parentTable": "Employee",
+            "parentEntityType": "Employee",
+            "type": "Employee",
+            "principalKey": "id_num",
+            "name": "Employee",
+            "textProperty": "name",
+            "navigationProperty": "Orders"
+          }
+        },
+        "table_number": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "total_price": {
+          "x-nullable": false,
+          "x-precision": 53,
+          "type": "number",
+          "format": "double"
+        },
+        "order_status": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 30
+        }
+      }
+    },
+    "Product": {
+      "x-table": "dbo.Products",
+      "resource": "Products",
+      "required": [
+        "id_product",
+        "name",
+        "category",
+        "set_to_unit",
+        "sale_price",
+        "purchase_price"
+      ],
+      "properties": {
+        "id_product": {
+          "x-key": true,
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer",
+          "x-navigation": [
+            {
+              "inversePropertyName": "Product",
+              "name": "ProductsInWarehouses",
+              "type": "ProductsInWarehouse"
+            },
+            {
+              "inversePropertyName": "Product",
+              "name": "ProductsInBars",
+              "type": "ProductsInBar"
+            }
+          ]
+        },
+        "name": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 40
+        },
+        "category": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 40
+        },
+        "set_to_unit": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "sale_price": {
+          "x-nullable": false,
+          "x-precision": 53,
+          "type": "number",
+          "format": "double"
+        },
+        "purchase_price": {
+          "x-nullable": false,
+          "x-precision": 53,
+          "type": "number",
+          "format": "double"
+        },
+        "ProductsInWarehouses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ProductsInWarehouse"
+          }
+        },
+        "ProductsInBars": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ProductsInBar"
+          }
+        }
+      }
+    },
+    "ProductsInBar": {
+      "x-table": "dbo.Products_in_bar",
+      "resource": "ProductsInBars",
+      "required": [
+        "id_bar",
+        "id_product",
+        "minimum_quantity",
+        "quantity"
+      ],
+      "properties": {
+        "Bar": {
+          "type": "object",
+          "$ref": "#/definitions/Bar"
+        },
+        "id_bar": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer",
+          "x-foreignKey": {
+            "parentTable": "Bar",
+            "parentEntityType": "Bar",
+            "type": "Bar",
+            "principalKey": "id_bar",
+            "name": "Bar",
+            "textProperty": "address",
+            "navigationProperty": "ProductsInBars"
+          }
+        },
+        "Product": {
+          "type": "object",
+          "$ref": "#/definitions/Product"
+        },
+        "id_product": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer",
+          "x-key": true,
+          "x-foreignKey": {
+            "parentTable": "Products",
+            "parentEntityType": "Product",
+            "type": "Product",
+            "principalKey": "id_product",
+            "name": "Product",
+            "textProperty": "name",
+            "navigationProperty": "ProductsInBars"
+          }
+        },
+        "minimum_quantity": {
+          "x-nullable": false,
+          "x-precision": 53,
+          "type": "number",
+          "format": "double"
+        },
+        "quantity": {
+          "x-nullable": false,
+          "x-precision": 53,
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "ProductsInWarehouse": {
+      "x-table": "dbo.Products_in_Warehouse",
+      "resource": "ProductsInWarehouses",
+      "required": [
+        "id_warehouse",
+        "id_product",
+        "set_to_unit",
+        "minimum_quantity",
+        "quantity"
+      ],
+      "properties": {
+        "Warehouse": {
+          "type": "object",
+          "$ref": "#/definitions/Warehouse"
+        },
+        "id_warehouse": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer",
+          "x-key": true,
+          "x-foreignKey": {
+            "parentTable": "Warehouse",
+            "parentEntityType": "Warehouse",
+            "type": "Warehouse",
+            "principalKey": "id_warehouse",
+            "name": "Warehouse",
+            "textProperty": "address",
+            "navigationProperty": "ProductsInWarehouses"
+          }
+        },
+        "Product": {
+          "type": "object",
+          "$ref": "#/definitions/Product"
+        },
+        "id_product": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer",
+          "x-foreignKey": {
+            "parentTable": "Products",
+            "parentEntityType": "Product",
+            "type": "Product",
+            "principalKey": "id_product",
+            "name": "Product",
+            "textProperty": "name",
+            "navigationProperty": "ProductsInWarehouses"
+          }
+        },
+        "set_to_unit": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "minimum_quantity": {
+          "x-nullable": false,
+          "x-precision": 53,
+          "type": "number",
+          "format": "double"
+        },
+        "quantity": {
+          "x-nullable": false,
+          "x-precision": 53,
+          "type": "number",
+          "format": "double"
+        },
+        "total_quantity": {
+          "x-computed": true,
+          "x-nullable": false,
+          "x-precision": 53,
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "ProductsOrder": {
+      "x-table": "dbo.Products_order",
+      "resource": "ProductsOrders",
+      "required": [
+        "id_order",
+        "id_product",
+        "sale_price"
+      ],
+      "properties": {
+        "id_order": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer",
+          "x-key": true,
+          "x-virtual": true
+        },
+        "id_product": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "sale_price": {
+          "x-nullable": false,
+          "x-precision": 53,
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "x-view": true
+    },
+    "RestockBar": {
+      "x-table": "dbo.Restock_Bar",
+      "resource": "RestockBars",
+      "required": [
+        "id_bar",
+        "id_product",
+        "id_num",
+        "quantity_restock",
+        "restock_status"
+      ],
+      "properties": {
+        "id_bar": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer",
+          "x-key": true,
+          "x-virtual": true
+        },
+        "id_product": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "id_num": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "quantity_restock": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "restock_status": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 30
+        }
+      },
+      "x-view": true
+    },
+    "RestockWarehouse": {
+      "x-table": "dbo.Restock_Warehouse",
+      "resource": "RestockWarehouses",
+      "required": [
+        "id_warehouse",
+        "id_product",
+        "id_num",
+        "quantity_restock",
+        "restock_status"
+      ],
+      "properties": {
+        "id_warehouse": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer",
+          "x-key": true,
+          "x-virtual": true
+        },
+        "id_product": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "id_num": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "quantity_restock": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "restock_status": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 30
+        }
+      },
+      "x-view": true
+    },
+    "Schedule": {
+      "x-table": "dbo.Schedule",
+      "resource": "Schedules",
+      "required": [
+        "cod",
+        "entry_time",
+        "exit_time"
+      ],
+      "properties": {
+        "cod": {
+          "x-key": true,
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "entry_time": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "exit_time": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        }
+      }
+    },
+    "Warehouse": {
+      "x-table": "dbo.Warehouse",
+      "resource": "Warehouses",
+      "required": [
+        "id_warehouse",
+        "phone_num",
+        "address"
+      ],
+      "properties": {
+        "id_warehouse": {
+          "x-key": true,
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer",
+          "x-navigation": [
+            {
+              "inversePropertyName": "Warehouse",
+              "name": "ProductsInWarehouses",
+              "type": "ProductsInWarehouse"
+            }
+          ]
+        },
+        "phone_num": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "address": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 40
+        },
+        "ProductsInWarehouses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ProductsInWarehouse"
+          }
+        }
+      }
+    }
+  },
+  "paths": {
+    "/Bars": {
+      "get": {
+        "operationId": "getBars",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/Bar"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createBar",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Bar",
+            "schema": {
+              "$ref": "#/definitions/Bar"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/Bar"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Branches": {
+      "get": {
+        "operationId": "getBranches",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/Branch"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createBranch",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Branch",
+            "schema": {
+              "$ref": "#/definitions/Branch"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/Branch"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/DayBarBranches": {
+      "get": {
+        "operationId": "getDayBarBranches",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/DayBarBranch"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createDayBarBranch",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "DayBarBranch",
+            "schema": {
+              "$ref": "#/definitions/DayBarBranch"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/DayBarBranch"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/DayBranches": {
+      "get": {
+        "operationId": "getDayBranches",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/DayBranch"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createDayBranch",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "DayBranch",
+            "schema": {
+              "$ref": "#/definitions/DayBranch"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/DayBranch"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/EmpWarehouses": {
+      "get": {
+        "operationId": "getEmpWarehouses",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/EmpWarehouse"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Employees": {
+      "get": {
+        "operationId": "getEmployees",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/Employee"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createEmployee",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Employee",
+            "schema": {
+              "$ref": "#/definitions/Employee"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/Employee"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/ListEmployees": {
+      "get": {
+        "operationId": "getListEmployees",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/ListEmployee"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Orders": {
+      "get": {
+        "operationId": "getOrders",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/Order"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createOrder",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Order",
+            "schema": {
+              "$ref": "#/definitions/Order"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/Order"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Products": {
+      "get": {
+        "operationId": "getProducts",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/Product"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createProduct",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Product",
+            "schema": {
+              "$ref": "#/definitions/Product"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/Product"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/ProductsInBars": {
+      "get": {
+        "operationId": "getProductsInBars",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/ProductsInBar"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createProductsInBar",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "ProductsInBar",
+            "schema": {
+              "$ref": "#/definitions/ProductsInBar"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/ProductsInBar"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/ProductsInWarehouses": {
+      "get": {
+        "operationId": "getProductsInWarehouses",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/ProductsInWarehouse"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createProductsInWarehouse",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "ProductsInWarehouse",
+            "schema": {
+              "$ref": "#/definitions/ProductsInWarehouse"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/ProductsInWarehouse"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/ProductsOrders": {
+      "get": {
+        "operationId": "getProductsOrders",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/ProductsOrder"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/RestockBars": {
+      "get": {
+        "operationId": "getRestockBars",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/RestockBar"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/RestockWarehouses": {
+      "get": {
+        "operationId": "getRestockWarehouses",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/RestockWarehouse"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Schedules": {
+      "get": {
+        "operationId": "getSchedules",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/Schedule"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createSchedule",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Schedule",
+            "schema": {
+              "$ref": "#/definitions/Schedule"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/Schedule"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Warehouses": {
+      "get": {
+        "operationId": "getWarehouses",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/Warehouse"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createWarehouse",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Warehouse",
+            "schema": {
+              "$ref": "#/definitions/Warehouse"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/Warehouse"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Bars({id_bar})": {
+      "delete": {
+        "operationId": "deleteBar",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id_bar",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getBarByid_bar",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id_bar",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Bar"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateBar",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id_bar",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "Bar",
+            "schema": {
+              "$ref": "#/definitions/Bar"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "cancel": {
+        "operationId": "cancelBarChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Bar",
+            "schema": {
+              "$ref": "#/definitions/Bar"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Branches({id_branch})": {
+      "delete": {
+        "operationId": "deleteBranch",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id_branch",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getBranchByid_branch",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id_branch",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Branch"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateBranch",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id_branch",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "Branch",
+            "schema": {
+              "$ref": "#/definitions/Branch"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "cancel": {
+        "operationId": "cancelBranchChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Branch",
+            "schema": {
+              "$ref": "#/definitions/Branch"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/DayBarBranches({date})": {
+      "delete": {
+        "operationId": "deleteDayBarBranch",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "date",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getDayBarBranchBydate",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "date",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/DayBarBranch"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateDayBarBranch",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "date",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "DayBarBranch",
+            "schema": {
+              "$ref": "#/definitions/DayBarBranch"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "cancel": {
+        "operationId": "cancelDayBarBranchChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "DayBarBranch",
+            "schema": {
+              "$ref": "#/definitions/DayBarBranch"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/DayBranches({date})": {
+      "delete": {
+        "operationId": "deleteDayBranch",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "date",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getDayBranchBydate",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "date",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/DayBranch"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateDayBranch",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "date",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "DayBranch",
+            "schema": {
+              "$ref": "#/definitions/DayBranch"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "cancel": {
+        "operationId": "cancelDayBranchChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "DayBranch",
+            "schema": {
+              "$ref": "#/definitions/DayBranch"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Employees({id_num})": {
+      "delete": {
+        "operationId": "deleteEmployee",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id_num",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getEmployeeByid_num",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id_num",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Employee"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateEmployee",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id_num",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "Employee",
+            "schema": {
+              "$ref": "#/definitions/Employee"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "cancel": {
+        "operationId": "cancelEmployeeChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Employee",
+            "schema": {
+              "$ref": "#/definitions/Employee"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Orders({id_order})": {
+      "delete": {
+        "operationId": "deleteOrder",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id_order",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getOrderByid_order",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id_order",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Order"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateOrder",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id_order",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "Order",
+            "schema": {
+              "$ref": "#/definitions/Order"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "cancel": {
+        "operationId": "cancelOrderChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Order",
+            "schema": {
+              "$ref": "#/definitions/Order"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Products({id_product})": {
+      "delete": {
+        "operationId": "deleteProduct",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id_product",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getProductByid_product",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id_product",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Product"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateProduct",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id_product",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "Product",
+            "schema": {
+              "$ref": "#/definitions/Product"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "cancel": {
+        "operationId": "cancelProductChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Product",
+            "schema": {
+              "$ref": "#/definitions/Product"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/ProductsInBars({id_product})": {
+      "delete": {
+        "operationId": "deleteProductsInBar",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id_product",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getProductsInBarByid_product",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id_product",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/ProductsInBar"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateProductsInBar",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id_product",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "ProductsInBar",
+            "schema": {
+              "$ref": "#/definitions/ProductsInBar"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "cancel": {
+        "operationId": "cancelProductsInBarChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "ProductsInBar",
+            "schema": {
+              "$ref": "#/definitions/ProductsInBar"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/ProductsInWarehouses({id_warehouse})": {
+      "delete": {
+        "operationId": "deleteProductsInWarehouse",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id_warehouse",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getProductsInWarehouseByid_warehouse",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id_warehouse",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/ProductsInWarehouse"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateProductsInWarehouse",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id_warehouse",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "ProductsInWarehouse",
+            "schema": {
+              "$ref": "#/definitions/ProductsInWarehouse"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "cancel": {
+        "operationId": "cancelProductsInWarehouseChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "ProductsInWarehouse",
+            "schema": {
+              "$ref": "#/definitions/ProductsInWarehouse"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Schedules({cod})": {
+      "delete": {
+        "operationId": "deleteSchedule",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "cod",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getScheduleBycod",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "cod",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Schedule"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateSchedule",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "cod",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "Schedule",
+            "schema": {
+              "$ref": "#/definitions/Schedule"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "cancel": {
+        "operationId": "cancelScheduleChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Schedule",
+            "schema": {
+              "$ref": "#/definitions/Schedule"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Warehouses({id_warehouse})": {
+      "delete": {
+        "operationId": "deleteWarehouse",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id_warehouse",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getWarehouseByid_warehouse",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id_warehouse",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Warehouse"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateWarehouse",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id_warehouse",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "Warehouse",
+            "schema": {
+              "$ref": "#/definitions/Warehouse"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "cancel": {
+        "operationId": "cancelWarehouseChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Warehouse",
+            "schema": {
+              "$ref": "#/definitions/Warehouse"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    }
+  },
+  "basePath": "/odata/SqlServerDemo",
+  "host": "localhost:5000",
+  "schemes": [
+    "http"
+  ]
+}

@@ -1,0 +1,31 @@
+﻿@inherits Filial.Layouts.LoginLayoutComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using Filial.Models.SqlServerDemo
+<RadzenDialog />
+<RadzenNotification />
+<RadzenTooltip />
+<RadzenContextMenu />
+
+<RadzenHeader>
+  <ChildContent>
+    <RadzenHeading Size="H1" style="text-align: center" Text="Zurrapa - Drinks & Coffee">
+    </RadzenHeading>
+  </ChildContent>
+</RadzenHeader>
+<RadzenBody @ref="body0" style="margin-left: 0px" Expanded="true">
+  <ChildContent>
+    <div class="row justify-content-center">
+      <div class="justify-content-center col-xl-5 col-md-7">
+        <RadzenCard style="margin-top: 8rem">
+          <ChildContent>
+            <RadzenContentContainer Name="main">
+            @Body
+            </RadzenContentContainer>
+          </ChildContent>
+        </RadzenCard>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenBody>

@@ -1,0 +1,28 @@
+{
+  "dataSources": [
+    "sql_server_demo"
+  ],
+  "generator": "@radzen/blazor-server",
+  "https": false,
+  "layouts": [
+    "Login",
+    "Main"
+  ],
+  "logo": "",
+  "name": "Filial",
+  "navigation": [
+    "Produtos no Armazém",
+    "Login"
+  ],
+  "pages": [
+    "Produtos no Armazém",
+    "Add Produtos no Armazém",
+    "Edit Produtos no Armazém",
+    "Login"
+  ],
+  "serverLang": "cs",
+  "serverProject": true,
+  "serverVersion": "6",
+  "startPage": "Login",
+  "theme": "standard"
+}

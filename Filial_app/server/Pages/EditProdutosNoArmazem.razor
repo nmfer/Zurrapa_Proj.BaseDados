@@ -1,0 +1,87 @@
+﻿@page "/edit-produtos-no-armazem/{id_warehouse}"
+@layout MainLayout
+@inherits Filial.Pages.EditProdutosNoArmazemComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using Filial.Models.SqlServerDemo
+<RadzenContent Container="main">
+  <ChildContent>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenTemplateForm TItem="Filial.Models.SqlServerDemo.ProductsInWarehouse" Data="@productsinwarehouse" Visible="@(productsinwarehouse != null)" Submit="@Form0Submit">
+          <ChildContent>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Warehouse" Component="id_warehouse" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDropDown Data="@getWarehousesResult" TextProperty="address" ValueProperty="id_warehouse" Placeholder="Choose Warehouse" style="display: block; width: 100%" @bind-Value="@(productsinwarehouse.id_warehouse)" Name="Id_warehouse">
+                </RadzenDropDown>
+                <RadzenRequiredValidator Component="Id_warehouse" Text="id_warehouse is required" style="position: absolute" DefaultValue="0">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Product" Component="id_product" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDropDown Data="@getProductsResult" TextProperty="name" ValueProperty="id_product" Placeholder="Choose Product" style="display: block; width: 100%" @bind-Value="@(productsinwarehouse.id_product)" Name="Id_product">
+                </RadzenDropDown>
+                <RadzenRequiredValidator Component="Id_product" Text="id_product is required" style="position: absolute" DefaultValue="0">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Set To Unit" Component="set_to_unit" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric style="display: block; width: 100%" @bind-Value="@(productsinwarehouse.set_to_unit)" Name="Set_to_unit">
+                </RadzenNumeric>
+                <RadzenRequiredValidator Component="Set_to_unit" Text="set_to_unit is required" style="position: absolute">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Minimum Quantity" Component="minimum_quantity" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric style="display: block; width: 100%" @bind-Value="@(productsinwarehouse.minimum_quantity)" Name="Minimum_quantity">
+                </RadzenNumeric>
+                <RadzenRequiredValidator Component="Minimum_quantity" Text="minimum_quantity is required" style="position: absolute">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Quantity" Component="quantity" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric style="display: block; width: 100%" @bind-Value="@(productsinwarehouse.quantity)" Name="Quantity">
+                </RadzenNumeric>
+                <RadzenRequiredValidator Component="Quantity" Text="quantity is required" style="position: absolute">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col offset-sm-3">
+                <RadzenButton ButtonType="ButtonType.Submit" Icon="save" Text="Save" ButtonStyle="ButtonStyle.Primary">
+                </RadzenButton>
+                <RadzenButton ButtonStyle="ButtonStyle.Light" style="margin-left: 1rem" Text="Cancel" Click="@Button2Click">
+                </RadzenButton>
+              </div>
+            </div>
+          </ChildContent>
+        </RadzenTemplateForm>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

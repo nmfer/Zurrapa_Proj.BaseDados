@@ -38,7 +38,7 @@ CREATE TABLE Employee
 
   CONSTRAINT CHK_OPType CHECK (type = 'empregado de caixa' OR type = 'empregado de balcao' OR type = 'empregado de escritorio'),
   CONSTRAINT CHK_OPEmpWare CHECK (emp_warehouse = 'sim' OR emp_warehouse = 'nao'),
-  CONSTRAINT CHK_OPEmpCounter CHECK (type != 'empregado de balcao' AND emp_warehouse = 'nao'),
+  --CONSTRAINT CHK_OPEmpCounter CHECK (type != 'empregado de balcao' AND emp_warehouse = 'nao'),
   
   PRIMARY KEY (id_num)
 );
@@ -116,8 +116,7 @@ CREATE TABLE Products_in_Warehouse
   
   FOREIGN KEY (id_warehouse) REFERENCES Warehouse(id_warehouse),
   FOREIGN KEY (id_product) REFERENCES Products(id_product),
-  
-  PRIMARY KEY (id_warehouse)
+
 );
 
 CREATE TABLE Products_in_bar
@@ -126,8 +125,6 @@ CREATE TABLE Products_in_bar
   id_product INT NOT NULL,
   minimum_quantity FLOAT NOT NULL,
   quantity FLOAT NOT NULL,
-  
-  PRIMARY KEY (id_product),
   
   FOREIGN KEY (id_bar) REFERENCES Bar(id_bar),
   FOREIGN KEY (id_product) REFERENCES Products(id_product)
@@ -145,7 +142,6 @@ CREATE TABLE Restock_Warehouse
   CONSTRAINT CHK_OPWareRestockStatus CHECK (restock_status = 'em entrega' OR restock_status = 'concluido'),
   
   -- FOREIGN KEY (id_num) REFERENCES Emp_Warehouse(id_num),
-  FOREIGN KEY (id_product) REFERENCES Products_in_bar(id_product),
   FOREIGN KEY (id_warehouse) REFERENCES Warehouse(id_warehouse)
 
 );
@@ -162,7 +158,7 @@ CREATE TABLE Restock_Bar
   CONSTRAINT CHK_OPBarRestockStatus CHECK (restock_status = 'em entrega' OR restock_status = 'concluido'),
 
   FOREIGN KEY (id_bar) REFERENCES Bar(id_bar),
-  FOREIGN KEY (id_product) REFERENCES Products_in_bar(id_product),
+
 
 );
 
@@ -203,8 +199,6 @@ CREATE TABLE Day_Bar_Branch
   total_received FLOAT NOT NULL,
   total_spent FLOAT NOT NULL,
   
-  PRIMARY KEY (date),
-  
   FOREIGN KEY (id_bar) REFERENCES Bar(id_bar)
 );
 
@@ -215,8 +209,5 @@ CREATE TABLE Day_Branch
   total_received FLOAT NOT NULL,
   total_spent FLOAT NOT NULL,
   
-  PRIMARY KEY (date),
-  
   FOREIGN KEY (id_branch) REFERENCES Branch(id_branch),
-  FOREIGN KEY (date) REFERENCES Day_Bar_Branch(date)
 );

@@ -1,5 +1,8 @@
 USE ZurrapaSede;
 
+ALTER TABLE Employee
+DROP CONSTRAINT CHK_OPEmpCounter;
+
 /*UPDATE TABLE Bar
 SET id_responsible = E.id_num
 FROM Branch B, List_Employees E

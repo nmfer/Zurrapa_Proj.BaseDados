@@ -79,7 +79,7 @@ CREATE TABLE Products
   sale_price FLOAT NOT NULL,
   purchase_price FLOAT NOT NULL,
 
-  CONSTRAINT CHK_OPCategory CHECK (category = 'bebida' OR category = 'pastelaria' OR category = 'salgado'),
+  CONSTRAINT CHK_OPCategory CHECK (category = 'bebida' OR category = 'comida'),
   
   PRIMARY KEY (id_product)
 );

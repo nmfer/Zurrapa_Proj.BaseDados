@@ -12,7 +12,7 @@ As bebidas e pastelaria s�o por unidade
 
 
 -- ARMAZÉM (só existe 1 armazém)
-INSERT INTO Warehouse(id_warehouse) VALUES (1);
+INSERT INTO Warehouse(id_warehouse, phone_num, address) VALUES (00, 272228636, 'Rua G Zona Industrial 1ª Fase, Castelo Branco');
 
 -- PRODUTOS NO ARMAZÉM
 INSERT INTO Products_in_Warehouse(id_warehouse, id_product, name, minimum_quantity, quantity, set_to_unit, total_quantity, purchase_price) VALUES (1, 1, 'cafe', '', '', '4', '', '24');

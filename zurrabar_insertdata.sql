@@ -6,18 +6,3 @@ INSERT INTO Bar(id_bar, id_branch, phone_num, address, id_responsible) VALUES ((
 INSERT INTO Bar(id_bar, id_branch, phone_num, address, id_responsible) VALUES ((SELECT TOP 1(id_bar) FROM Bar ORDER BY id_bar DESC) + 1, 03, 'n_5 Praça Doutor Francisco Salgado Zenha, Guarda', 271545666, 000008);
 INSERT INTO Bar(id_bar, id_branch, phone_num, address, id_responsible) VALUES ((SELECT TOP 1(id_bar) FROM Bar ORDER BY id_bar DESC) + 1, 01, 'n_45 Rua Nova Ribeiro da Relva, Covilhã', 271562945, 000009);
 
---PRODUTOS NO BAR
-INSERT INTO Products_in_bar(id_bar, id_product, minimum_quantity) VALUES ();
-INSERT INTO Products_in_bar(id_bar, id_product, minimum_quantity) VALUES ();
-INSERT INTO Products_in_bar(id_bar, id_product, minimum_quantity) VALUES ();
-INSERT INTO Products_in_bar(id_bar, id_product, minimum_quantity) VALUES ();
-INSERT INTO Products_in_bar(id_bar, id_product, minimum_quantity) VALUES ();
-INSERT INTO Products_in_bar(id_bar, id_product, minimum_quantity) VALUES ();
-INSERT INTO Products_in_bar(id_bar, id_product, minimum_quantity) VALUES ();
-INSERT INTO Products_in_bar(id_bar, id_product, minimum_quantity) VALUES ();
-INSERT INTO Products_in_bar(id_bar, id_product, minimum_quantity) VALUES ();
-INSERT INTO Products_in_bar(id_bar, id_product, minimum_quantity) VALUES ();
-INSERT INTO Products_in_bar(id_bar, id_product, minimum_quantity) VALUES ();
-INSERT INTO Products_in_bar(id_bar, id_product, minimum_quantity) VALUES ();
-INSERT INTO Products_in_bar(id_bar, id_product, minimum_quantity) VALUES ();
-INSERT INTO Products_in_bar(id_bar, id_product, minimum_quantity) VALUES ();

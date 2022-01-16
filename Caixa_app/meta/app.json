@@ -1,0 +1,25 @@
+{
+  "dataSources": [
+    "sql_project_final"
+  ],
+  "generator": "@radzen/blazor-server",
+  "https": false,
+  "layouts": [
+    "Login",
+    "Main"
+  ],
+  "logo": "",
+  "name": "Caixa",
+  "navigation": [
+    "Login "
+  ],
+  "pages": [
+    "Login "
+  ],
+  "serverLang": "cs",
+  "serverProject": true,
+  "serverVersion": "6",
+  "startPage": "Login ",
+  "theme": "standard",
+  "wasm": true
+}

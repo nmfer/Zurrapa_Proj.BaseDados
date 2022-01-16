@@ -100,6 +100,8 @@ CREATE TABLE Emp_Warehouse
   id_num INT NOT NULL,
   id_bar INT NOT NULL,
 
+  CONSTRAINT CHK_ID CHECK ((SELECT id_local FROM List_Employees) = 0),
+
   FOREIGN KEY (id_warehouse) REFERENCES Warehouse(id_warehouse),
   FOREIGN KEY (id_num) REFERENCES Employee(id_num),
   FOREIGN KEY (id_bar) REFERENCES Bar(id_bar),

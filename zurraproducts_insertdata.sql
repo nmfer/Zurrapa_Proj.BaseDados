@@ -14,14 +14,12 @@ INSERT INTO Products(id_product, name, category, set_to_unit, sale_price, purcha
 INSERT INTO Products(id_product, name, category, set_to_unit, sale_price, purchase_price) VALUES ((SELECT TOP 1(id_product) FROM Products ORDER BY id_product DESC) + 1, 'bebida energetica', 'bebida', 6, 1.5, 18); --10
 INSERT INTO Products(id_product, name, category, set_to_unit, sale_price, purchase_price) VALUES ((SELECT TOP 1(id_product) FROM Products ORDER BY id_product DESC) + 1, 'cha', 'bebida', 12, 0.5, 5); --11
 
--- PASTELARIA
+-- COMIDA
 INSERT INTO Products(id_product, name, category, set_to_unit, sale_price, purchase_price) VALUES ((SELECT TOP 1(id_product) FROM Products ORDER BY id_product DESC) + 1, 'natas', 'pastelaria', 35, 0.8, 20); -- 12
 INSERT INTO Products(id_product, name, category, set_to_unit, sale_price, purchase_price) VALUES ((SELECT TOP 1(id_product) FROM Products ORDER BY id_product DESC) + 1, 'croissant com creme', 'pastelaria', 35, 0.8, 20); --13
 INSERT INTO Products(id_product, name, category, set_to_unit, sale_price, purchase_price) VALUES ((SELECT TOP 1(id_product) FROM Products ORDER BY id_product DESC) + 1, 'mil folhas', 'pastelaria', 35, 0.8, 20); -- 14
 INSERT INTO Products(id_product, name, category, set_to_unit, sale_price, purchase_price) VALUES ((SELECT TOP 1(id_product) FROM Products ORDER BY id_product DESC) + 1, 'bola berlim', 'pastelaria', 35, 0.8, 20); -- 15
 INSERT INTO Products(id_product, name, category, set_to_unit, sale_price, purchase_price) VALUES ((SELECT TOP 1(id_product) FROM Products ORDER BY id_product DESC) + 1, 'croissant com chocolate', 'pastelaria', 35, 0.8, 20); --16
-
--- SAGADOS
 INSERT INTO Products(id_product, name, category, set_to_unit, sale_price, purchase_price) VALUES ((SELECT TOP 1(id_product) FROM Products ORDER BY id_product DESC) + 1, 'pao com fiambre', 'salgados', 5, 0.9, 3.5); -- 17
 INSERT INTO Products(id_product, name, category, set_to_unit, sale_price, purchase_price) VALUES ((SELECT TOP 1(id_product) FROM Products ORDER BY id_product DESC) + 1, 'pao com queijo', 'salgados', 5, 0.9, 3.5); -- 18
 INSERT INTO Products(id_product, name, category, set_to_unit, sale_price, purchase_price) VALUES ((SELECT TOP 1(id_product) FROM Products ORDER BY id_product DESC) + 1, 'pao misto', 'salgados', 5, 1.2, 4); -- 19

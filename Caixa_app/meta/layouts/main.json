@@ -63,16 +63,34 @@
             {
               "items": [
                 {
-                  "path": "consultar-produtos",
+                  "path": "products-in-bar",
+                  "target": "_self",
                   "text": "Consultar Produtos"
                 },
                 {
-                  "path": "pedidos",
+                  "path": "add-products-in-bar",
+                  "target": "_self",
+                  "text": "Pedir restock produtos"
+                },
+                {
+                  "path": "add-order",
+                  "target": "_self",
+                  "text": "Realizar Novo Pedido"
+                },
+                {
+                  "path": "order",
+                  "target": "_self",
                   "text": "Consultar Pedidos"
                 },
                 {
-                  "path": "restock-bar",
-                  "text": "Pedir restock produtos"
+                  "path": "edit-order",
+                  "target": "_self",
+                  "text": "Efetuar Pagamento"
+                },
+                {
+                  "path": "login",
+                  "target": "_self",
+                  "text": "Logout"
                 }
               ],
               "name": "panelmenu0",

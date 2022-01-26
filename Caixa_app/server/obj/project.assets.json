@@ -23,6 +23,12 @@
           "lib/netstandard2.0/Humanizer.dll": {}
         }
       },
+      "LibSassBuilder/2.0.1": {
+        "type": "package",
+        "build": {
+          "build/_._": {}
+        }
+      },
       "Microsoft.AspNetCore.Authorization/6.0.0": {
         "type": "package",
         "dependencies": {
@@ -798,9 +804,10 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
-      "Radzen.Blazor/3.14.1": {
+      "Radzen.Blazor/3.14.2": {
         "type": "package",
         "dependencies": {
+          "LibSassBuilder": "2.0.1",
           "Microsoft.AspNetCore.Components": "5.0.0",
           "Microsoft.AspNetCore.Components.Web": "5.0.0",
           "Microsoft.CSharp": "4.7.0",
@@ -1143,7 +1150,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.Components.WebAssembly": "6.0.0",
           "Microsoft.Extensions.Http": "6.0.0",
-          "Radzen.Blazor": "3.14.1",
+          "Radzen.Blazor": "3.14.2",
           "System.Net.Http.Json": "6.0.0"
         },
         "compile": {
@@ -1192,6 +1199,36 @@
         "lib/netstandard2.0/Humanizer.dll",
         "lib/netstandard2.0/Humanizer.xml",
         "logo.png"
+      ]
+    },
+    "LibSassBuilder/2.0.1": {
+      "sha512": "f+7TWQtCirW94VdzKL9SaAfeSF96TeEqdtDztmTGbndrcUlZZlL6uJLZKQCXQgj1BB3OqX0584OCvqFHrkAusA==",
+      "type": "package",
+      "path": "libsassbuilder/2.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LibSassBuilder.csproj",
+        "build/DesignTime/LibSassBuilder.DesignTime.targets",
+        "build/DesignTime/Rules/ProjectItemsSchema.xaml",
+        "build/DesignTime/Rules/SassFileType.xaml",
+        "build/LibSassBuilder.props",
+        "build/LibSassBuilder.targets",
+        "libsassbuilder.2.0.1.nupkg.sha512",
+        "libsassbuilder.nuspec",
+        "sass.png",
+        "tool/AdvancedStringBuilder.dll",
+        "tool/CommandLine.dll",
+        "tool/LibSassBuilder.deps.json",
+        "tool/LibSassBuilder.dll",
+        "tool/LibSassBuilder.exe",
+        "tool/LibSassBuilder.pdb",
+        "tool/LibSassBuilder.runtimeconfig.json",
+        "tool/LibSassHost.dll",
+        "tool/runtimes/linux-x64/native/libsass.so",
+        "tool/runtimes/osx-x64/native/libsass.dylib",
+        "tool/runtimes/win-x64/native/libsass.dll",
+        "tool/x64/libsass.dll"
       ]
     },
     "Microsoft.AspNetCore.Authorization/6.0.0": {
@@ -2436,10 +2473,10 @@
         "packageIcon.png"
       ]
     },
-    "Radzen.Blazor/3.14.1": {
-      "sha512": "198yMXo3V2CMncVvcsRQST1XuLdhoI6li03UQwQRh7TO6Sa2opvszJ5r/fGyoDiBoFWMzvVRrsUN/Oe7MKWzVw==",
+    "Radzen.Blazor/3.14.2": {
+      "sha512": "jNnCYGdnyGqvMxmH9vaW6cPByNDAGiBFRAPygzzV2IIu47slhJxZ8+u7Xw3DysfIEj4K/qrViF8JeY/geLk5Wg==",
       "type": "package",
-      "path": "radzen.blazor/3.14.1",
+      "path": "radzen.blazor/3.14.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2453,7 +2490,7 @@
         "lib/net5.0/Radzen.Blazor.xml",
         "lib/netstandard2.1/Radzen.Blazor.dll",
         "lib/netstandard2.1/Radzen.Blazor.xml",
-        "radzen.blazor.3.14.1.nupkg.sha512",
+        "radzen.blazor.3.14.2.nupkg.sha512",
         "radzen.blazor.nuspec",
         "staticwebassets/Radzen.Blazor.js",
         "staticwebassets/css/dark-base.css",

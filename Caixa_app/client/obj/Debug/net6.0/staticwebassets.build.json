@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "VJ1RdTz/AW4aMe6BhT7QfmqV44/O/ph/hSGRIi9QFUc=",
+  "Hash": "PZnz/TAtZxzZRGFBAJydOwn6l5HX48n/pb1wkbALWX0=",
   "Source": "Caixa.Client",
   "BasePath": "/",
   "Mode": "Root",
@@ -17,10 +17,10 @@
   ],
   "Assets": [
     {
-      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/css/dark-base.css",
+      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/css/dark-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/",
+      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/dark-base.css",
       "AssetKind": "All",
@@ -31,13 +31,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/css/dark-base.css"
+      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/css/dark-base.css"
     },
     {
-      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/css/dark.css",
+      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/css/dark.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/",
+      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/dark.css",
       "AssetKind": "All",
@@ -48,13 +48,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/css/dark.css"
+      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/css/dark.css"
     },
     {
-      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/css/default-base.css",
+      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/css/default-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/",
+      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/default-base.css",
       "AssetKind": "All",
@@ -65,13 +65,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/css/default-base.css"
+      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/css/default-base.css"
     },
     {
-      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/css/default.css",
+      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/css/default.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/",
+      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/default.css",
       "AssetKind": "All",
@@ -82,13 +82,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/css/default.css"
+      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/css/default.css"
     },
     {
-      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/css/humanistic-base.css",
+      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/css/humanistic-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/",
+      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/humanistic-base.css",
       "AssetKind": "All",
@@ -99,13 +99,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/css/humanistic-base.css"
+      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/css/humanistic-base.css"
     },
     {
-      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/css/humanistic.css",
+      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/css/humanistic.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/",
+      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/humanistic.css",
       "AssetKind": "All",
@@ -116,13 +116,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/css/humanistic.css"
+      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/css/humanistic.css"
     },
     {
-      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/css/software-base.css",
+      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/css/software-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/",
+      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/software-base.css",
       "AssetKind": "All",
@@ -133,13 +133,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/css/software-base.css"
+      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/css/software-base.css"
     },
     {
-      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/css/software.css",
+      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/css/software.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/",
+      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/software.css",
       "AssetKind": "All",
@@ -150,13 +150,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/css/software.css"
+      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/css/software.css"
     },
     {
-      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/css/standard-base.css",
+      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/css/standard-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/",
+      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/standard-base.css",
       "AssetKind": "All",
@@ -167,13 +167,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/css/standard-base.css"
+      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/css/standard-base.css"
     },
     {
-      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/css/standard.css",
+      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/css/standard.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/",
+      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/standard.css",
       "AssetKind": "All",
@@ -184,13 +184,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/css/standard.css"
+      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/css/standard.css"
     },
     {
-      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/fonts/MaterialIcons-Regular.woff",
+      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/fonts/MaterialIcons-Regular.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/",
+      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/MaterialIcons-Regular.woff",
       "AssetKind": "All",
@@ -201,13 +201,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/fonts/MaterialIcons-Regular.woff"
+      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/fonts/MaterialIcons-Regular.woff"
     },
     {
-      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/fonts/roboto-v15-latin-300.woff",
+      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/fonts/roboto-v15-latin-300.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/",
+      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/roboto-v15-latin-300.woff",
       "AssetKind": "All",
@@ -218,13 +218,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/fonts/roboto-v15-latin-300.woff"
+      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/fonts/roboto-v15-latin-300.woff"
     },
     {
-      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/fonts/roboto-v15-latin-700.woff",
+      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/fonts/roboto-v15-latin-700.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/",
+      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/roboto-v15-latin-700.woff",
       "AssetKind": "All",
@@ -235,13 +235,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/fonts/roboto-v15-latin-700.woff"
+      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/fonts/roboto-v15-latin-700.woff"
     },
     {
-      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/fonts/roboto-v15-latin-regular.woff",
+      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/fonts/roboto-v15-latin-regular.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/",
+      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/roboto-v15-latin-regular.woff",
       "AssetKind": "All",
@@ -252,13 +252,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/fonts/roboto-v15-latin-regular.woff"
+      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/fonts/roboto-v15-latin-regular.woff"
     },
     {
-      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/fonts/SourceSansPro-Black.woff",
+      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/fonts/SourceSansPro-Black.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/",
+      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-Black.woff",
       "AssetKind": "All",
@@ -269,13 +269,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/fonts/SourceSansPro-Black.woff"
+      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/fonts/SourceSansPro-Black.woff"
     },
     {
-      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/fonts/SourceSansPro-BlackIt.woff",
+      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/fonts/SourceSansPro-BlackIt.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/",
+      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-BlackIt.woff",
       "AssetKind": "All",
@@ -286,13 +286,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/fonts/SourceSansPro-BlackIt.woff"
+      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/fonts/SourceSansPro-BlackIt.woff"
     },
     {
-      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/fonts/SourceSansPro-Bold.woff",
+      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/fonts/SourceSansPro-Bold.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/",
+      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-Bold.woff",
       "AssetKind": "All",
@@ -303,13 +303,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/fonts/SourceSansPro-Bold.woff"
+      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/fonts/SourceSansPro-Bold.woff"
     },
     {
-      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/fonts/SourceSansPro-BoldIt.woff",
+      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/fonts/SourceSansPro-BoldIt.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/",
+      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-BoldIt.woff",
       "AssetKind": "All",
@@ -320,13 +320,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/fonts/SourceSansPro-BoldIt.woff"
+      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/fonts/SourceSansPro-BoldIt.woff"
     },
     {
-      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/fonts/SourceSansPro-ExtraLight.woff",
+      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/fonts/SourceSansPro-ExtraLight.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/",
+      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-ExtraLight.woff",
       "AssetKind": "All",
@@ -337,13 +337,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/fonts/SourceSansPro-ExtraLight.woff"
+      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/fonts/SourceSansPro-ExtraLight.woff"
     },
     {
-      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/fonts/SourceSansPro-ExtraLightIt.woff",
+      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/fonts/SourceSansPro-ExtraLightIt.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/",
+      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-ExtraLightIt.woff",
       "AssetKind": "All",
@@ -354,13 +354,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/fonts/SourceSansPro-ExtraLightIt.woff"
+      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/fonts/SourceSansPro-ExtraLightIt.woff"
     },
     {
-      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/fonts/SourceSansPro-It.woff",
+      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/fonts/SourceSansPro-It.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/",
+      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-It.woff",
       "AssetKind": "All",
@@ -371,13 +371,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/fonts/SourceSansPro-It.woff"
+      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/fonts/SourceSansPro-It.woff"
     },
     {
-      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/fonts/SourceSansPro-Light.woff",
+      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/fonts/SourceSansPro-Light.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/",
+      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-Light.woff",
       "AssetKind": "All",
@@ -388,13 +388,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/fonts/SourceSansPro-Light.woff"
+      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/fonts/SourceSansPro-Light.woff"
     },
     {
-      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/fonts/SourceSansPro-LightIt.woff",
+      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/fonts/SourceSansPro-LightIt.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/",
+      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-LightIt.woff",
       "AssetKind": "All",
@@ -405,13 +405,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/fonts/SourceSansPro-LightIt.woff"
+      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/fonts/SourceSansPro-LightIt.woff"
     },
     {
-      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/fonts/SourceSansPro-Regular.woff",
+      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/fonts/SourceSansPro-Regular.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/",
+      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-Regular.woff",
       "AssetKind": "All",
@@ -422,13 +422,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/fonts/SourceSansPro-Regular.woff"
+      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/fonts/SourceSansPro-Regular.woff"
     },
     {
-      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/fonts/SourceSansPro-Semibold.woff",
+      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/fonts/SourceSansPro-Semibold.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/",
+      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-Semibold.woff",
       "AssetKind": "All",
@@ -439,13 +439,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/fonts/SourceSansPro-Semibold.woff"
+      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/fonts/SourceSansPro-Semibold.woff"
     },
     {
-      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/fonts/SourceSansPro-SemiboldIt.woff",
+      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/fonts/SourceSansPro-SemiboldIt.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/",
+      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-SemiboldIt.woff",
       "AssetKind": "All",
@@ -456,13 +456,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/fonts/SourceSansPro-SemiboldIt.woff"
+      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/fonts/SourceSansPro-SemiboldIt.woff"
     },
     {
-      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/Radzen.Blazor.js",
+      "Identity": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/Radzen.Blazor.js",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/",
+      "ContentRoot": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "Radzen.Blazor.js",
       "AssetKind": "All",
@@ -473,7 +473,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/staticwebassets/Radzen.Blazor.js"
+      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/staticwebassets/Radzen.Blazor.js"
     },
     {
       "Identity": "/Users/nunomiguelfernandes/Documents/Base Dados/Projeto final/Zurrapa_Proj.BaseDados/Caixa_app/client/bin/Debug/net6.0/wwwroot/_framework/blazor.boot.json",
@@ -1187,7 +1187,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/lib/net5.0/Radzen.Blazor.dll"
+      "OriginalItemSpec": "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/lib/net5.0/Radzen.Blazor.dll"
     },
     {
       "Identity": "/Users/nunomiguelfernandes/Documents/Base Dados/Projeto final/Zurrapa_Proj.BaseDados/Caixa_app/client/bin/Debug/net6.0/wwwroot/_framework/System.AppContext.dll",
@@ -4097,23 +4097,6 @@
       "OriginalItemSpec": "/Users/nunomiguelfernandes/Documents/Base Dados/Projeto final/Zurrapa_Proj.BaseDados/Caixa_app/client/bin/Debug/net6.0/wwwroot/_framework/Microsoft.Extensions.Http.dll"
     },
     {
-      "Identity": "/Users/nunomiguelfernandes/Documents/Base Dados/Projeto final/Zurrapa_Proj.BaseDados/Caixa_app/client/obj/Debug/net6.0/build-gz/13Y3BMrw.gz",
-      "SourceId": "Caixa.Client",
-      "SourceType": "Computed",
-      "ContentRoot": "/Users/nunomiguelfernandes/Documents/Base Dados/Projeto final/Zurrapa_Proj.BaseDados/Caixa_app/client/bin/Debug/net6.0/wwwroot/",
-      "BasePath": "/",
-      "RelativePath": "_framework/Radzen.Blazor.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "/Users/nunomiguelfernandes/Documents/Base Dados/Projeto final/Zurrapa_Proj.BaseDados/Caixa_app/client/bin/Debug/net6.0/wwwroot/_framework/Radzen.Blazor.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "/Users/nunomiguelfernandes/Documents/Base Dados/Projeto final/Zurrapa_Proj.BaseDados/Caixa_app/client/bin/Debug/net6.0/wwwroot/_framework/Radzen.Blazor.dll"
-    },
-    {
       "Identity": "/Users/nunomiguelfernandes/Documents/Base Dados/Projeto final/Zurrapa_Proj.BaseDados/Caixa_app/client/obj/Debug/net6.0/build-gz/1IpDUHVb.gz",
       "SourceId": "Caixa.Client",
       "SourceType": "Computed",
@@ -4673,6 +4656,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/nunomiguelfernandes/Documents/Base Dados/Projeto final/Zurrapa_Proj.BaseDados/Caixa_app/client/bin/Debug/net6.0/wwwroot/_framework/System.Reflection.Emit.Lightweight.dll"
+    },
+    {
+      "Identity": "/Users/nunomiguelfernandes/Documents/Base Dados/Projeto final/Zurrapa_Proj.BaseDados/Caixa_app/client/obj/Debug/net6.0/build-gz/aJd+o4Ie.gz",
+      "SourceId": "Caixa.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "/Users/nunomiguelfernandes/Documents/Base Dados/Projeto final/Zurrapa_Proj.BaseDados/Caixa_app/client/bin/Debug/net6.0/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "_framework/Radzen.Blazor.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "/Users/nunomiguelfernandes/Documents/Base Dados/Projeto final/Zurrapa_Proj.BaseDados/Caixa_app/client/bin/Debug/net6.0/wwwroot/_framework/Radzen.Blazor.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "/Users/nunomiguelfernandes/Documents/Base Dados/Projeto final/Zurrapa_Proj.BaseDados/Caixa_app/client/bin/Debug/net6.0/wwwroot/_framework/Radzen.Blazor.dll"
     },
     {
       "Identity": "/Users/nunomiguelfernandes/Documents/Base Dados/Projeto final/Zurrapa_Proj.BaseDados/Caixa_app/client/obj/Debug/net6.0/build-gz/ALCnCbUe.gz",

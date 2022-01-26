@@ -1,19 +1,40 @@
 {
-  "name": "Login ",
   "access": "Everybody",
-  "layout": "Login",
   "components": [
     {
-      "type": "content",
-      "container": "main",
       "components": [
         {
-          "type": "heading",
-          "size": "H1",
           "name": "pageTitle",
-          "text": "Login "
+          "size": "H1",
+          "text": "Bem Vindo",
+          "type": "heading"
+        },
+        {
+          "name": "heading0",
+          "size": "H6",
+          "text": "Introduza os seus dados:",
+          "type": "heading"
+        },
+        {
+          "allowRegister": false,
+          "allowResetPassword": false,
+          "events": {
+            "login": [
+              {
+                "path": "products-in-bar",
+                "type": "navigate"
+              }
+            ]
+          },
+          "name": "login0",
+          "type": "login",
+          "userText": "UserID"
         }
-      ]
+      ],
+      "container": "main",
+      "type": "content"
     }
-  ]
+  ],
+  "layout": "Login",
+  "name": "Login"
 }

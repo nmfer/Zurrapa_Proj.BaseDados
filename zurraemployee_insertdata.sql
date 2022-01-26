@@ -30,14 +30,15 @@ INSERT INTO Employee(id_num, name, type, pwd, emp_warehouse) VALUES ((SELECT TOP
 -- automatizar a introdução do ID
 -- (SELECT TOP 1(id_num) FROM Employees ORDER BY id_num DESC) + 1
 
+
 -- LISTA DE EMPREGADOS
-INSERT INTO List_Employees(id_num, id_bar, id_branch, id_local, responsible, date, cod) VALUES (000001, 0, 01, 01, 'sim', '2022-02-01', 3);
-INSERT INTO List_Employees(id_num, id_bar, id_branch, id_local, responsible, date, cod) VALUES (000002, 0, 02, 02, 'sim', '2022-02-01', 3);
-INSERT INTO List_Employees(id_num, id_bar, id_branch, id_local, responsible, date, cod) VALUES (000003, 0, 03, 03, 'sim', '2022-02-01', 3);
+INSERT INTO List_Employees(id_num, id_bar, id_branch, id_local, responsible, date, cod) VALUES (000001, 001, 01, 01, 'sim', '2022-02-01', 3);
+INSERT INTO List_Employees(id_num, id_bar, id_branch, id_local, responsible, date, cod) VALUES (000002, 002, 02, 02, 'sim', '2022-02-01', 3);
+INSERT INTO List_Employees(id_num, id_bar, id_branch, id_local, responsible, date, cod) VALUES (000003, 003, 03, 03, 'sim', '2022-02-01', 3);
 INSERT INTO List_Employees(id_num, id_bar, id_branch, id_local, responsible, date, cod) VALUES (000004, 001, 01, 00, 'sim', '2022-02-01', 2);
-INSERT INTO List_Employees(id_num, id_bar, id_branch, id_local, responsible, date, cod) VALUES (000005, 0, 01, 01, 'nao', '2022-02-01', 0);
+INSERT INTO List_Employees(id_num, id_bar, id_branch, id_local, responsible, date, cod) VALUES (000005, 001, 01, 01, 'nao', '2022-02-01', 0);
 INSERT INTO List_Employees(id_num, id_bar, id_branch, id_local, responsible, date, cod) VALUES (000006, 002, 02, 002, 'sim', '2022-02-01', 2);
-INSERT INTO List_Employees(id_num, id_bar, id_branch, id_local, responsible, date, cod) VALUES (000007, 0, 02, 02, 'nao', '2022-02-01', 0);
+INSERT INTO List_Employees(id_num, id_bar, id_branch, id_local, responsible, date, cod) VALUES (000007, 002, 02, 02, 'nao', '2022-02-01', 0);
 INSERT INTO List_Employees(id_num, id_bar, id_branch, id_local, responsible, date, cod) VALUES (000008, 003, 03, 003, 'sim', '2022-02-01', 2);
 INSERT INTO List_Employees(id_num, id_bar, id_branch, id_local, responsible, date, cod) VALUES (000009, 004, 01, 004, 'sim', '2022-02-01', 2);
 INSERT INTO List_Employees(id_num, id_bar, id_branch, id_local, responsible, date, cod) VALUES (000010, 001, 01, 001, 'nao', '2022-02-01', 2);
@@ -47,5 +48,4 @@ INSERT INTO List_Employees(id_num, id_bar, id_branch, id_local, responsible, dat
 INSERT INTO List_Employees(id_num, id_bar, id_branch, id_local, responsible, date, cod) VALUES (000014, 004, 01, 004, 'nao', '2022-02-01', 2);
 INSERT INTO List_Employees(id_num, id_bar, id_branch, id_local, responsible, date, cod) VALUES (000015, 002, 02, 002, 'nao', '2022-02-01', 2);
 INSERT INTO List_Employees(id_num, id_bar, id_branch, id_local, responsible, date, cod) VALUES (000016, 004, 01, 004, 'nao', '2022-02-01', 0);
-
 

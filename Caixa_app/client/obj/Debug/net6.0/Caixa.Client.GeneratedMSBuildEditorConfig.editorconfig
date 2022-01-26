@@ -22,8 +22,32 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/nunomiguelfernandes/Documents/Base Dados/Projeto final/Zurrapa_Proj.BaseDados/Caixa_app/client/Pages/AddOrder.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRkT3JkZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nunomiguelfernandes/Documents/Base Dados/Projeto final/Zurrapa_Proj.BaseDados/Caixa_app/client/Pages/AddProductsInBar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRkUHJvZHVjdHNJbkJhci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nunomiguelfernandes/Documents/Base Dados/Projeto final/Zurrapa_Proj.BaseDados/Caixa_app/client/Pages/EditOrder.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRWRpdE9yZGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nunomiguelfernandes/Documents/Base Dados/Projeto final/Zurrapa_Proj.BaseDados/Caixa_app/client/Pages/EditProductsInBar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRWRpdFByb2R1Y3RzSW5CYXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/nunomiguelfernandes/Documents/Base Dados/Projeto final/Zurrapa_Proj.BaseDados/Caixa_app/client/Pages/Login.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTG9naW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nunomiguelfernandes/Documents/Base Dados/Projeto final/Zurrapa_Proj.BaseDados/Caixa_app/client/Pages/Order.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvT3JkZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nunomiguelfernandes/Documents/Base Dados/Projeto final/Zurrapa_Proj.BaseDados/Caixa_app/client/Pages/ProductsInBar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJvZHVjdHNJbkJhci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/nunomiguelfernandes/Documents/Base Dados/Projeto final/Zurrapa_Proj.BaseDados/Caixa_app/client/Shared/LoginLayout.razor]

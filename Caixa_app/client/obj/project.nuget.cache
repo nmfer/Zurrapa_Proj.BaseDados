@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "IQkKMZP/XF9ZBYZ+BOORYMYVFY3yICpLehdPIF5FJKihxGsKLIxhgWbAF0XVCMQLT3y5tJD+GOji+iYPWCbg0g==",
+  "dgSpecHash": "/Q2yOppJjsn4j2awFR/I9XAAkv6ursvZyendwRO4hGuGNoT+/1JsFyBya4XJdK5O+i70DJrnKSg9+ceX+MTZ4w==",
   "success": true,
   "projectFilePath": "/Users/nunomiguelfernandes/Documents/Base Dados/Projeto final/Zurrapa_Proj.BaseDados/Caixa_app/client/Caixa.Client.csproj",
   "expectedPackageFiles": [
+    "/Users/nunomiguelfernandes/.nuget/packages/libsassbuilder/2.0.1/libsassbuilder.2.0.1.nupkg.sha512",
     "/Users/nunomiguelfernandes/.nuget/packages/microsoft.aspnetcore.authorization/6.0.0/microsoft.aspnetcore.authorization.6.0.0.nupkg.sha512",
     "/Users/nunomiguelfernandes/.nuget/packages/microsoft.aspnetcore.components/6.0.0/microsoft.aspnetcore.components.6.0.0.nupkg.sha512",
     "/Users/nunomiguelfernandes/.nuget/packages/microsoft.aspnetcore.components.analyzers/6.0.0/microsoft.aspnetcore.components.analyzers.6.0.0.nupkg.sha512",
@@ -30,7 +31,7 @@
     "/Users/nunomiguelfernandes/.nuget/packages/microsoft.extensions.primitives/6.0.0/microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "/Users/nunomiguelfernandes/.nuget/packages/microsoft.jsinterop/6.0.0/microsoft.jsinterop.6.0.0.nupkg.sha512",
     "/Users/nunomiguelfernandes/.nuget/packages/microsoft.jsinterop.webassembly/6.0.0/microsoft.jsinterop.webassembly.6.0.0.nupkg.sha512",
-    "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.1/radzen.blazor.3.14.1.nupkg.sha512",
+    "/Users/nunomiguelfernandes/.nuget/packages/radzen.blazor/3.14.2/radzen.blazor.3.14.2.nupkg.sha512",
     "/Users/nunomiguelfernandes/.nuget/packages/system.diagnostics.diagnosticsource/6.0.0/system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
     "/Users/nunomiguelfernandes/.nuget/packages/system.io.pipelines/6.0.0/system.io.pipelines.6.0.0.nupkg.sha512",
     "/Users/nunomiguelfernandes/.nuget/packages/system.linq.dynamic.core/1.2.12/system.linq.dynamic.core.1.2.12.nupkg.sha512",

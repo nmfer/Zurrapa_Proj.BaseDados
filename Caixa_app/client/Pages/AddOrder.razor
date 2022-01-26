@@ -1,0 +1,99 @@
+﻿@page "/add-order"
+@layout MainLayout
+@inherits Caixa.Pages.AddOrderComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using Caixa.Models.SqlProjectFinal
+<RadzenContent Container="main">
+  <ChildContent>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenTemplateForm Data="@order" Visible="@(order != null)" TItem="Caixa.Models.SqlProjectFinal.Order" Submit="@Form0Submit">
+          <ChildContent>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Id Order" Component="id_order" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric style="display: block; width: 100%" @bind-Value="@(order.id_order)" Name="Id_order">
+                </RadzenNumeric>
+                <RadzenRequiredValidator Component="Id_order" Text="id_order is required" style="position: absolute">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Bar" Component="id_bar" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDropDown Data="@getBarsResult" TextProperty="address" ValueProperty="id_bar" Placeholder="Choose Bar" style="display: block; width: 100%" @bind-Value="@(order.id_bar)" Name="Id_bar">
+                </RadzenDropDown>
+                <RadzenRequiredValidator Component="Id_bar" Text="id_bar is required" style="position: absolute" DefaultValue="0">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Employee" Component="id_num" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDropDown Data="@getEmployeesResult" TextProperty="name" ValueProperty="id_num" Placeholder="Choose Employee" style="display: block; width: 100%" @bind-Value="@(order.id_num)" Name="Id_num">
+                </RadzenDropDown>
+                <RadzenRequiredValidator Component="Id_num" Text="id_num is required" style="position: absolute" DefaultValue="0">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Table Number" Component="table_number" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric style="display: block; width: 100%" @bind-Value="@(order.table_number)" Name="Table_number">
+                </RadzenNumeric>
+                <RadzenRequiredValidator Component="Table_number" Text="table_number is required" style="position: absolute">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Total Price" Component="total_price" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric style="display: block; width: 100%" @bind-Value="@(order.total_price)" Name="Total_price">
+                </RadzenNumeric>
+                <RadzenRequiredValidator Component="Total_price" Text="total_price is required" style="position: absolute">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Order Status" Component="order_status" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox MaxLength="30" style="display: block; width: 100%" @bind-Value="@(order.order_status)" Name="Order_status">
+                </RadzenTextBox>
+                <RadzenRequiredValidator Component="Order_status" Text="order_status is required" style="position: absolute">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col offset-sm-3">
+                <RadzenButton ButtonType="ButtonType.Submit" Icon="save" Text="Save" ButtonStyle="ButtonStyle.Primary">
+                </RadzenButton>
+                <RadzenButton ButtonStyle="ButtonStyle.Light" style="margin-left: 1rem" Text="Cancel" Click="@Button2Click">
+                </RadzenButton>
+              </div>
+            </div>
+          </ChildContent>
+        </RadzenTemplateForm>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

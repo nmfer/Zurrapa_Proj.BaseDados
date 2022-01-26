@@ -1,0 +1,35 @@
+﻿@page "/products-in-bar"
+@layout MainLayout
+@inherits Caixa.Pages.ProductsInBarComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using Caixa.Models.SqlProjectFinal
+<RadzenContent Container="main">
+  <ChildContent>
+    <RadzenHeading Size="H1" Text="Produtos no Bar">
+    </RadzenHeading>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenDataGrid @ref="grid0" AllowFiltering="true" AllowPaging="true" AllowSorting="true" Count="@getProductsInBarsCount" Data="@getProductsInBarsResult" FilterMode="Radzen.FilterMode.Advanced" TItem="Caixa.Models.SqlProjectFinal.ProductsInBar" LoadData="@Grid0LoadData" RowSelect="@Grid0RowSelect">
+          <Columns>
+            <RadzenDataGridColumn TItem="Caixa.Models.SqlProjectFinal.ProductsInBar" FilterProperty="Bar.address" GroupProperty="Bar.address" Property="id_bar" SortProperty="Bar.address" Title="Bar">
+              <Template Context="data">
+              @(data.Bar?.address)
+              </Template>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Caixa.Models.SqlProjectFinal.ProductsInBar" FilterProperty="Product.name" GroupProperty="Product.name" Property="id_product" SortProperty="Product.name" Title="Produto">
+              <Template Context="data">
+              @(data.Product?.name)
+              </Template>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Caixa.Models.SqlProjectFinal.ProductsInBar" Property="minimum_quantity" Title="Quantidade Minima">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Caixa.Models.SqlProjectFinal.ProductsInBar" Property="quantity" Title="Quantidade">
+            </RadzenDataGridColumn>
+          </Columns>
+        </RadzenDataGrid>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

@@ -1,0 +1,45 @@
+﻿@page "/order"
+@layout MainLayout
+@inherits Caixa.Pages.OrderComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using Caixa.Models.SqlProjectFinal
+<RadzenContent Container="main">
+  <ChildContent>
+    <RadzenHeading Size="H1" Text="Order">
+    </RadzenHeading>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenDataGrid @ref="grid0" AllowFiltering="true" AllowPaging="true" AllowSorting="true" Count="@getOrdersCount" Data="@getOrdersResult" FilterMode="Radzen.FilterMode.Advanced" TItem="Caixa.Models.SqlProjectFinal.Order" LoadData="@Grid0LoadData" RowSelect="@Grid0RowSelect">
+          <Columns>
+            <RadzenDataGridColumn TItem="Caixa.Models.SqlProjectFinal.Order" Property="id_order" Title="ID Pedido">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Caixa.Models.SqlProjectFinal.Order" FilterProperty="Bar.address" GroupProperty="Bar.address" Property="id_bar" SortProperty="Bar.address" Title="Bar">
+              <Template Context="data">
+              @(data.Bar?.address)
+              </Template>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Caixa.Models.SqlProjectFinal.Order" FilterProperty="Employee.name" GroupProperty="Employee.name" Property="id_num" SortProperty="Employee.name" Title="Empregado">
+              <Template Context="data">
+              @(data.Employee?.name)
+              </Template>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Caixa.Models.SqlProjectFinal.Order" Property="table_number" Title="Mesa">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Caixa.Models.SqlProjectFinal.Order" Property="total_price" Title="Preço">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Caixa.Models.SqlProjectFinal.Order" Property="order_status" Title="Estado">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Caixa.Models.SqlProjectFinal.Order" Filterable="false" Sortable="false" TextAlign="TextAlign.Center" Width="70px">
+              <Template Context="caixaModelsSqlProjectFinalOrder">
+                <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="close" Size="ButtonSize.Small" Click="@((args) =>GridDeleteButtonClick(args, caixaModelsSqlProjectFinalOrder))" @onclick:stopPropagation="true">
+                </RadzenButton>
+              </Template>
+            </RadzenDataGridColumn>
+          </Columns>
+        </RadzenDataGrid>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

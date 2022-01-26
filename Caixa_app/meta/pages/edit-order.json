@@ -1,0 +1,446 @@
+{
+  "components": [
+    {
+      "type": "content",
+      "container": "main",
+      "components": [
+        {
+          "type": "row",
+          "components": [
+            {
+              "type": "col",
+              "class": "col-md-12",
+              "components": [
+                {
+                  "type": "template-form",
+                  "name": "form0",
+                  "components": [
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Id Order",
+                              "component": "id_order",
+                              "name": "id_orderLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "int",
+                              "type": "numeric",
+                              "name": "id_order",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "value": "${order.id_order}"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "id_orderRequiredValidator",
+                              "component": "id_order",
+                              "text": "id_order is required",
+                              "style": {
+                                "position": "absolute"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Bar",
+                              "component": "id_bar",
+                              "name": "id_barLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "data": "${getBarsResult}",
+                              "textProperty": "address",
+                              "valueProperty": "id_bar",
+                              "placeholder": "Choose Bar",
+                              "valueType": "int",
+                              "type": "dropdown",
+                              "name": "id_bar",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "value": "${order.id_bar}"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "id_barRequiredValidator",
+                              "component": "id_bar",
+                              "text": "id_bar is required",
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "defaultValue": "0"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Employee",
+                              "component": "id_num",
+                              "name": "id_numLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "data": "${getEmployeesResult}",
+                              "textProperty": "name",
+                              "valueProperty": "id_num",
+                              "placeholder": "Choose Employee",
+                              "valueType": "int",
+                              "type": "dropdown",
+                              "name": "id_num",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "value": "${order.id_num}"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "id_numRequiredValidator",
+                              "component": "id_num",
+                              "text": "id_num is required",
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "defaultValue": "0"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Table Number",
+                              "component": "table_number",
+                              "name": "table_numberLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "int",
+                              "type": "numeric",
+                              "name": "table_number",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "value": "${order.table_number}"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "table_numberRequiredValidator",
+                              "component": "table_number",
+                              "text": "table_number is required",
+                              "style": {
+                                "position": "absolute"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Total Price",
+                              "component": "total_price",
+                              "name": "total_priceLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "double",
+                              "type": "numeric",
+                              "name": "total_price",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "value": "${order.total_price}"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "total_priceRequiredValidator",
+                              "component": "total_price",
+                              "text": "total_price is required",
+                              "style": {
+                                "position": "absolute"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Order Status",
+                              "component": "order_status",
+                              "name": "order_statusLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "string",
+                              "maxLength": 30,
+                              "type": "textbox",
+                              "name": "order_status",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "value": "${order.order_status}"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "order_statusRequiredValidator",
+                              "component": "order_status",
+                              "text": "order_status is required",
+                              "style": {
+                                "position": "absolute"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col offset-sm-3",
+                          "components": [
+                            {
+                              "type": "button",
+                              "buttonType": "submit",
+                              "icon": "save",
+                              "text": "Save",
+                              "buttonStyle": "primary"
+                            },
+                            {
+                              "type": "button",
+                              "buttonStyle": "light",
+                              "style": {
+                                "marginLeft": "1rem"
+                              },
+                              "text": "Cancel",
+                              "events": {
+                                "click": [
+                                  {
+                                    "type": "close-popup"
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "events": {
+                    "submit": [
+                      {
+                        "error": [
+                          {
+                            "detail": "Unable to update Order",
+                            "severity": "error",
+                            "summary": "Error",
+                            "type": "notify"
+                          }
+                        ],
+                        "name": "sql_project_final.updateOrder",
+                        "parameters": [
+                          {
+                            "name": "id_order",
+                            "value": "${parameters.id_order}"
+                          },
+                          {
+                            "name": "Order",
+                            "value": "${order}"
+                          }
+                        ],
+                        "then": [
+                          {
+                            "type": "close-popup",
+                            "result": "${order}",
+                            "condition": ""
+                          }
+                        ],
+                        "type": "invoke"
+                      }
+                    ]
+                  },
+                  "itemType": "Caixa.Models.SqlProjectFinal.Order",
+                  "data": "${order}",
+                  "visible": "${order != null}"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "sql_project_final.getOrderByid_order",
+        "parameters": [
+          {
+            "name": "id_order",
+            "value": "${parameters.id_order}"
+          }
+        ],
+        "then": [
+          {
+            "name": "order",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "Caixa.Models.SqlProjectFinal.Order"
+          }
+        ],
+        "error": [],
+        "type": "invoke"
+      },
+      {
+        "name": "sql_project_final.getBars",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getBarsResult",
+            "type": "set",
+            "value": "${result.Value.AsODataEnumerable()}",
+            "valueType": "IEnumerable<Caixa.Models.SqlProjectFinal.Bar>"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "name": "sql_project_final.getEmployees",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getEmployeesResult",
+            "type": "set",
+            "value": "${result.Value.AsODataEnumerable()}",
+            "valueType": "IEnumerable<Caixa.Models.SqlProjectFinal.Employee>"
+          }
+        ],
+        "type": "invoke"
+      }
+    ]
+  },
+  "name": "Edit Order",
+  "layout": "Main"
+}

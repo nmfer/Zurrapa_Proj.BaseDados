@@ -1,9 +1,9 @@
 USE ZurrapaSede;
-
+/*
 ALTER TABLE Employee
 DROP CONSTRAINT CHK_OPEmpCounter;
 
-/*UPDATE TABLE Bar
+UPDATE TABLE Bar
 SET id_responsible = E.id_num
 FROM Branch B, List_Employees E
 WHERE E.responsible = 'sim';
@@ -17,3 +17,6 @@ UPDATE TABLE Emp_Warehouse
 SET id_num = E.id_num
 FROM Emp_Warehouse W, Employee E
 WHERE E.emp_warehouse = 'sim';*/
+
+
+-- SELECT * FROM Orders

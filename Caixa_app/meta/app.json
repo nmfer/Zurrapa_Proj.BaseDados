@@ -11,15 +11,23 @@
   "logo": "",
   "name": "Caixa",
   "navigation": [
-    "Login "
+    "Login",
+    "ProductsInBar",
+    "Order"
   ],
   "pages": [
-    "Login "
+    "Login",
+    "ProductsInBar",
+    "Add ProductsInBar",
+    "Edit ProductsInBar",
+    "Order",
+    "Add Order",
+    "Edit Order"
   ],
   "serverLang": "cs",
   "serverProject": true,
   "serverVersion": "6",
-  "startPage": "Login ",
+  "startPage": "Login",
   "theme": "standard",
   "wasm": true
 }

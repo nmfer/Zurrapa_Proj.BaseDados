@@ -10,7 +10,6 @@ CREATE TABLE Branch
   email VARCHAR(40) NOT NULL,
   phone_num INT NOT NULL,
   address VARCHAR(40) NOT NULL,
-  -- not done yet
   id_manager INT NOT NULL,
   
   PRIMARY KEY (id_branch)
@@ -100,7 +99,7 @@ CREATE TABLE Emp_Warehouse
   id_num INT NOT NULL,
   id_bar INT NOT NULL,
 
-  CONSTRAINT CHK_ID CHECK ((SELECT id_local FROM List_Employees) = 0),
+  -- CONSTRAINT CHK_ID CHECK ((SELECT id_local FROM List_Employees) = 0),
 
   FOREIGN KEY (id_warehouse) REFERENCES Warehouse(id_warehouse),
   FOREIGN KEY (id_num) REFERENCES Employee(id_num),

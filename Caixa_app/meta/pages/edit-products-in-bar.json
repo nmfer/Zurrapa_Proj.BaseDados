@@ -1,0 +1,349 @@
+{
+  "components": [
+    {
+      "type": "content",
+      "container": "main",
+      "components": [
+        {
+          "type": "row",
+          "components": [
+            {
+              "type": "col",
+              "class": "col-md-12",
+              "components": [
+                {
+                  "type": "template-form",
+                  "name": "form0",
+                  "components": [
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Bar",
+                              "component": "id_bar",
+                              "name": "id_barLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "data": "${getBarsResult}",
+                              "textProperty": "address",
+                              "valueProperty": "id_bar",
+                              "placeholder": "Choose Bar",
+                              "valueType": "int",
+                              "type": "dropdown",
+                              "name": "id_bar",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "value": "${productsinbar.id_bar}"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "id_barRequiredValidator",
+                              "component": "id_bar",
+                              "text": "id_bar is required",
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "defaultValue": "0"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Product",
+                              "component": "id_product",
+                              "name": "id_productLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "data": "${getProductsResult}",
+                              "textProperty": "name",
+                              "valueProperty": "id_product",
+                              "placeholder": "Choose Product",
+                              "valueType": "int",
+                              "type": "dropdown",
+                              "name": "id_product",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "value": "${productsinbar.id_product}"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "id_productRequiredValidator",
+                              "component": "id_product",
+                              "text": "id_product is required",
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "defaultValue": "0"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Minimum Quantity",
+                              "component": "minimum_quantity",
+                              "name": "minimum_quantityLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "double",
+                              "type": "numeric",
+                              "name": "minimum_quantity",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "value": "${productsinbar.minimum_quantity}"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "minimum_quantityRequiredValidator",
+                              "component": "minimum_quantity",
+                              "text": "minimum_quantity is required",
+                              "style": {
+                                "position": "absolute"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Quantity",
+                              "component": "quantity",
+                              "name": "quantityLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "double",
+                              "type": "numeric",
+                              "name": "quantity",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "value": "${productsinbar.quantity}"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "quantityRequiredValidator",
+                              "component": "quantity",
+                              "text": "quantity is required",
+                              "style": {
+                                "position": "absolute"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col offset-sm-3",
+                          "components": [
+                            {
+                              "type": "button",
+                              "buttonType": "submit",
+                              "icon": "save",
+                              "text": "Save",
+                              "buttonStyle": "primary"
+                            },
+                            {
+                              "type": "button",
+                              "buttonStyle": "light",
+                              "style": {
+                                "marginLeft": "1rem"
+                              },
+                              "text": "Cancel",
+                              "events": {
+                                "click": [
+                                  {
+                                    "type": "close-popup"
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "events": {
+                    "submit": [
+                      {
+                        "error": [
+                          {
+                            "detail": "Unable to update ProductsInBar",
+                            "severity": "error",
+                            "summary": "Error",
+                            "type": "notify"
+                          }
+                        ],
+                        "name": "sql_project_final.updateProductsInBar",
+                        "parameters": [
+                          {
+                            "name": "id_product",
+                            "value": "${parameters.id_product}"
+                          },
+                          {
+                            "name": "ProductsInBar",
+                            "value": "${productsinbar}"
+                          }
+                        ],
+                        "then": [
+                          {
+                            "type": "close-popup",
+                            "result": "${productsinbar}",
+                            "condition": ""
+                          }
+                        ],
+                        "type": "invoke"
+                      }
+                    ]
+                  },
+                  "itemType": "Caixa.Models.SqlProjectFinal.ProductsInBar",
+                  "data": "${productsinbar}",
+                  "visible": "${productsinbar != null}"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "sql_project_final.getProductsInBarByid_product",
+        "parameters": [
+          {
+            "name": "id_product",
+            "value": "${parameters.id_product}"
+          }
+        ],
+        "then": [
+          {
+            "name": "productsinbar",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "Caixa.Models.SqlProjectFinal.ProductsInBar"
+          }
+        ],
+        "error": [],
+        "type": "invoke"
+      },
+      {
+        "name": "sql_project_final.getBars",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getBarsResult",
+            "type": "set",
+            "value": "${result.Value.AsODataEnumerable()}",
+            "valueType": "IEnumerable<Caixa.Models.SqlProjectFinal.Bar>"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "name": "sql_project_final.getProducts",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getProductsResult",
+            "type": "set",
+            "value": "${result.Value.AsODataEnumerable()}",
+            "valueType": "IEnumerable<Caixa.Models.SqlProjectFinal.Product>"
+          }
+        ],
+        "type": "invoke"
+      }
+    ]
+  },
+  "name": "Edit Products In Bar",
+  "layout": "Main"
+}

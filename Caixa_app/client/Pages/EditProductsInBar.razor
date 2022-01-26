@@ -1,0 +1,75 @@
+﻿@page "/edit-products-in-bar/{id_product}"
+@layout MainLayout
+@inherits Caixa.Pages.EditProductsInBarComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using Caixa.Models.SqlProjectFinal
+<RadzenContent Container="main">
+  <ChildContent>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenTemplateForm TItem="Caixa.Models.SqlProjectFinal.ProductsInBar" Data="@productsinbar" Visible="@(productsinbar != null)" Submit="@Form0Submit">
+          <ChildContent>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Bar" Component="id_bar" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDropDown Data="@getBarsResult" TextProperty="address" ValueProperty="id_bar" Placeholder="Choose Bar" style="display: block; width: 100%" @bind-Value="@(productsinbar.id_bar)" Name="Id_bar">
+                </RadzenDropDown>
+                <RadzenRequiredValidator Component="Id_bar" Text="id_bar is required" style="position: absolute" DefaultValue="0">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Product" Component="id_product" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDropDown Data="@getProductsResult" TextProperty="name" ValueProperty="id_product" Placeholder="Choose Product" style="display: block; width: 100%" @bind-Value="@(productsinbar.id_product)" Name="Id_product">
+                </RadzenDropDown>
+                <RadzenRequiredValidator Component="Id_product" Text="id_product is required" style="position: absolute" DefaultValue="0">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Minimum Quantity" Component="minimum_quantity" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric style="display: block; width: 100%" @bind-Value="@(productsinbar.minimum_quantity)" Name="Minimum_quantity">
+                </RadzenNumeric>
+                <RadzenRequiredValidator Component="Minimum_quantity" Text="minimum_quantity is required" style="position: absolute">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Quantity" Component="quantity" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric style="display: block; width: 100%" @bind-Value="@(productsinbar.quantity)" Name="Quantity">
+                </RadzenNumeric>
+                <RadzenRequiredValidator Component="Quantity" Text="quantity is required" style="position: absolute">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col offset-sm-3">
+                <RadzenButton ButtonType="ButtonType.Submit" Icon="save" Text="Save" ButtonStyle="ButtonStyle.Primary">
+                </RadzenButton>
+                <RadzenButton ButtonStyle="ButtonStyle.Light" style="margin-left: 1rem" Text="Cancel" Click="@Button2Click">
+                </RadzenButton>
+              </div>
+            </div>
+          </ChildContent>
+        </RadzenTemplateForm>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

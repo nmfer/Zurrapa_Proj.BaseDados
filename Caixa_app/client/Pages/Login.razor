@@ -8,7 +8,11 @@
 @using Caixa.Models.SqlProjectFinal
 <RadzenContent Container="main">
   <ChildContent>
-    <RadzenHeading Size="H1" Text="Login ">
+    <RadzenHeading Size="H1" Text="Bem Vindo">
     </RadzenHeading>
+    <RadzenHeading Size="H6" Text="Introduza os seus dados:">
+    </RadzenHeading>
+    <RadzenLogin AllowRegister="false" AllowResetPassword="false" UserText="UserID" Login="@Login0Login">
+    </RadzenLogin>
   </ChildContent>
 </RadzenContent>

@@ -1,0 +1,21 @@
+{
+  "dataSources": [
+    "sql_server_demo"
+  ],
+  "generator": "@radzen/blazor-server",
+  "https": false,
+  "layouts": [
+    "Login",
+    "Main"
+  ],
+  "logo": "",
+  "name": "Armazem",
+  "navigation": [],
+  "pages": [],
+  "serverLang": "cs",
+  "serverProject": true,
+  "serverVersion": "6",
+  "startPage": null,
+  "theme": "standard",
+  "wasm": true
+}

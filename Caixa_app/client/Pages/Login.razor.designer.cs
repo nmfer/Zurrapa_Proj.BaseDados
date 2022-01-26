@@ -46,5 +46,10 @@ namespace Caixa.Pages
 
         [Inject]
         protected SqlProjectFinalService SqlProjectFinal { get; set; }
+
+        protected async System.Threading.Tasks.Task Login0Login(dynamic args)
+        {
+            UriHelper.NavigateTo("products-in-bar");
+        }
     }
 }
